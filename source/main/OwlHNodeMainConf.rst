@@ -1,0 +1,235 @@
+Node Main Configuration file
+============================
+
+KEY - node
+----------
+
+:: 
+
+  * version *
+  * homenet *
+  * alertLog *
+  * backupFolder *
+
+{
+    "node":{
+        "version":"0.13.0.2020-03-26",
+        "homenet": ["192.168.0.0/16", "172.16.0.0/8"],
+        "alertLog": "/var/log/owlh/alerts.json",
+        "backupFolder":"conf/backups/"
+    },
+    "loop":{
+        "ControlSource":"10",
+        "StartSource":"10",
+        "MonitorFile":"3",
+        "CHcontrol":"3",
+        "InitAnalizer":"3",
+        "knownports":"20",
+        "NewPorts":"20",
+        "FileRotation":"1",
+        "monitor":"20",
+        "stap":"60",
+        "Pcap_replay":"60",
+        "stapStatus":"60",
+        "ReadDir":"60",
+        "remote":"10"
+    },
+    "suricataBPF":{
+        "pathBPF": "/etc/suricata/bpf/",
+        "fileBPF": "filter.bpf"
+    },
+    "stapCollector":{
+        "start":"systemctl start owlh-stapcollector",
+        "stop":"systemctl stop owlh-stapcollector",
+        "status":"netstat -nputa | grep 50010",
+        "param":"-c",
+        "command":"bash"
+    },
+    "suricataRuleset":{
+        "path": "/etc/suricata/rules/",
+        "file": "owlh.rules"
+    },
+    "SuricataRulesetReload":{
+        "suricatasc": "/usr/bin/suricatasc",
+        "param": "-c",
+        "reload": "reload-rules",
+        "socket": "/var/run/suricata/suricata-command.socket"
+    },
+    "stapConn":{
+        "path": "conf/servers.db",
+        "cmd": "sqlite3"
+    },
+    "groupConn":{
+        "path": "conf/group.db",
+        "cmd": "sqlite3"
+    },
+    "pluginConn":{
+        "path": "conf/plugins.db",
+        "cmd": "sqlite3"
+    },
+    "nodeConn":{
+        "path": "conf/node.db",
+        "cmd": "sqlite3"
+    },
+    "monitorConn":{
+        "path": "conf/monitor.db",
+        "cmd": "sqlite3"
+    },
+    "suriStop":{
+        "stop":"service owlhsuricata stop",
+        "param":"-c",
+        "command":"bash"
+    },
+    "suriStart":{
+        "start":"service owlhsuricata start",
+        "param":"-c",
+        "command":"bash"
+    },
+    "suriPath":{
+        "path": "/etc/suricata"
+    },
+    "suricata":{
+        "suricata":"suricata",
+        "reload":"kill -USR2",
+        "kill":"kill -9",
+        "command":"bash",
+        "param":"-c",
+        "start":"systemctl start owlhsuricata",
+        "stop":"systemctl stop owlhsuricata",
+        "backup":"/var/run/suricata/",
+        "pidfile":"pidfile.pid",
+        "filter":"/etc/suricata/bpf/<ID>-filter.bpf",
+        "fullpidfile":"/var/run/suricata/<ID>-pidfile.pid"
+    },
+    "files":{
+        "software TAP PULL mode conf":"conf/stap-defaults.json",
+        "main.conf": "conf/main.conf",
+        "suricata_config": "/etc/suricata/suricata.yaml",
+        "analyzer":"conf/analyzer.json"
+    },
+    "suriBin":{
+        "cmd": "/usr/bin/suricata",
+        "param": "-V"
+    },
+    "suriRunning":{
+        "cmd": "ps -ef | grep suricata | grep -v grep | grep -v sudo | awk '{print $8 \" \" $2}' ",
+        "param": "-c",
+        "command": "bash"
+    },
+    "loadDataWazuhPath":{
+        "path": "/var/ossec",
+        "ossec": "/var/ossec/etc/ossec.conf"
+    },
+    "loadDataWazuhBin":{
+        "bin": "/var/ossec/bin/ossec-control"
+    },
+    "loadDataWazuhRunning":{
+        "cmd": "/var/ossec/bin/ossec-control status | grep logcollector",
+        "param": "-c",
+        "command": "bash"
+    },
+    "wazuhStop":{
+        "stop":"/var/ossec/bin/ossec-control stop",
+        "param":"-c",
+        "command":"bash"
+    },
+    "wazuhStart":{
+        "start":"/var/ossec/bin/ossec-control start",
+        "param":"-c",
+        "command":"bash"
+    },
+    "loadDataZeekPath":{
+        "path": "/usr/local/zeek",
+        "nodeConfig":"/usr/local/zeek/etc/node.cfg"
+    },
+    "suriInit":{
+        "path":"/usr/local/owlh/src/owlhnode/conf/suricata-init.conf"
+    },
+    "zeek":{
+        "zeekctl":"/usr/local/zeek/bin/zeekctl",
+        "nodeconfig":"/usr/local/zeek/etc/node.cfg",
+        "networkconfig":"/usr/local/zeek/etc/networks.cfg",
+        "zeekctlconfig":"/usr/local/zeek/etc/zeekctl.cfg",
+        "zeekconfig":"/usr/local/zeek/etc/",
+        "zeekpath":"/usr/local/zeek",
+        "status":"/usr/local/zeek/bin/zeekctl status | grep standalone | awk '{print $1 \" \" $4}'",
+        "currentstatus":"status",
+        "stop":"stop",
+        "start":"start",
+        "deploy":"deploy"
+    },
+    "loadDataZeekRunning":{
+        "cmd":"/usr/local/zeek/bin/zeekctl status | grep standalone | awk '{print $1 \" \" $4}'",
+        "param":"-c",
+        "command":"bash"
+    },
+    "stapPubKey":{
+        "publicKey":"/usr/local/owlh/src/owlhnode/conf/certs/ca.pem",
+        "user":"owlh",
+        "cert":"/home/owlh/.ssh/owlhmaster"
+    },
+    "stap":{
+        "in_queue":"/usr/share/owlh/in_queue/",
+        "out_queue":"/usr/share/owlh/out_queue/",
+        "interface":"owlh",
+        "keepPCAP":"false",
+        "plugin":"/usr/bin/socat",
+        "tcpdum":"/usr/sbin/tcpdump",
+        "tcpreplay":"tcpreplay -i <IFACE> -t -l 1 <NAME>",
+        "checkTCPDUMP":"tcpdump",
+        "checkTCPREPLAY":"tcpreplay",
+        "checkSOCAT":"socat"
+    },
+    "logs":{
+        "filename":"/var/log/owlh/owlhnode-api.log",
+        "maxlines":"1000000",
+        "maxsize":"256000000",
+        "daily":"true",
+        "maxdays":"7",
+        "rotate":"true",
+        "level":"10"
+    },
+    "monitorfile":{
+        "testing1":"/tmp/owlh/owlh.logs",
+        "testing2":"/root/workspace/src/owlhnode/owlh.logs",
+        "testing3":"/root/workspace/src/owlhnode/conf/owlh.logs",
+        "testing4":"/var/log/owlh/owlhnode-api.log"
+    },
+    "knownports":{
+        "file":"/usr/local/zeek/logs/current/conn.log",
+        "timeToAlert":"60"
+    },
+    "deploy":{
+        "suricata":"/usr/local/src/owlhnode/conf/deploy/owlh-suricata.sh",
+        "zeek":"/usr/local/src/owlhnode/conf/deploy/owlh-zeek.sh",
+        "interface":"/usr/local/src/owlhnode/conf/deploy/owlh-interface.sh",
+        "firewall":"/usr/local/src/owlhnode/conf/deploy/owlh-firewall.sh",
+        "moloch":"/usr/local/src/owlhnode/conf/deploy/owlh-moloch.sh"
+    },
+    "analyzer":{
+        "analyzerconf":"conf/analyzer.json"
+    },
+    "service":{
+        "file":"owlhnode.service",
+        "origPath":"conf/service/",
+        "dstPath":"/etc/systemd/system/",
+        "reload":"systemctl daemon-reload",
+        "enable":"systemctl enable owlhnode"
+    },
+    "execute":{
+        "command":"sh",
+        "check":"which",
+        "param":"-c",
+        "copy":"cp",
+        "wget":"wget",
+        "socatPID":"ps -aux | grep socat | grep OPENSSL-LISTEN:<PORT> | grep -v grep | awk '{print $2}'",
+        "socNetExec":"-d OPENSSL-LISTEN:<PORT>,cipher=HIGH,method=TLS1.2,reuseaddr,pf=ip4,fork,cert=<CERT>,verify=0 SYSTEM:\"tcpreplay -t -i <IFACE> -\" &",
+        "socNetFile":"-d OPENSSL-LISTEN:<PORT>,cipher=HIGH,method=TLS1.2,reuseaddr,pf=ip4,fork,cert=<CERT>,verify=0 SYSTEM:\"tcpdump -n -r - -s 0 -G 50 -W 100 -w <PCAP_PATH><PCAP_PREFIX>%d%m%Y%H%M%S.pcap <BPF>\" &",
+        "NetSocFile":"-n -i <IFACE> -s 0 -w - <BPF> | <STAP> - OPENSSL:<COLLECTOR>:<PORT>,cert=<CERT>,verify=0,forever,retry=10,interval=5",
+        "list":"ls -la",
+        "suriPID":"ps -aux | grep suricata | <ID> grep -v grep | awk '{print $2}'",
+        "openSSL":"ps -aux | grep OPENSSL:<COLLECTOR>:<PORT> | grep -v grep | awk '{print $2}'",
+        "tcpdumpPID":"ps -aux | grep -v grep | grep tcpdump <TCPDUMP> | grep <IFACE> | grep '<BPF>' | awk '{print $2}'",
+        "status":"status | grep running | awk '{print $5}'",
+        "pidID":"ps -aux | grep <PID> | grep -v grep"
+    }

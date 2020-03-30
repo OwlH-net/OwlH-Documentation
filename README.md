@@ -1,4 +1,4 @@
-# OwlH-Documentation
-OwlH Documentation
+# OwlH Documentation
 
-visit http://documentation.owlh.net
+
+support@owlh.net

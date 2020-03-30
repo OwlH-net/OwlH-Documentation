@@ -1,0 +1,587 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>OwlH - Zeek and Wazuh &mdash; owlh 0.4 - Cloud and Bro documentation</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="index" title="Index"
+              href="../genindex.html"/>
+        <link rel="search" title="Search" href="../search.html"/>
+    <link rel="top" title="owlh 0.4 - Cloud and Bro documentation" href="../index.html"/>
+        <link rel="up" title="How to use/configure OwlH Components" href="OwlHUC.html"/>
+        <link rel="prev" title="OwlH - Suricata and Wazuh" href="OwlHWazuh.html"/> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> owlh
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.4
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="OwlHGS.html">Getting Started with OwlH</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="OwlHGS.html#components">Components</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="OwlHNode.html">OwlH Node</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="OwlHNode.html#what-is-owlh-node">What is OwlH Node?</a></li>
+<li class="toctree-l4"><a class="reference internal" href="OwlHNode.html#how-to-install-owlh-node">How to install OwlH Node</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="OwlHMaster.html">OwlH Master</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="OwlHMaster.html#what-is-owlh-master">What is OwlH Master?</a></li>
+<li class="toctree-l4"><a class="reference internal" href="OwlHMaster.html#install-owlh-master">Install OwlH Master</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="OwlHUI.html">OwlH UI (user interface)</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="OwlHUI.html#if-you-need-help">If you need help:</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="OwlHInstaller.html">OwlH Installer</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="OwlHInstaller.html#what-is-owlh-installer">What is OwlH Installer?</a></li>
+<li class="toctree-l4"><a class="reference internal" href="OwlHInstaller.html#prepare-your-owlh-installer">Prepare your OwlH Installer</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="OwlHClient.html">OwlH Client</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="OwlHClient.html#what-is-owlh-client">What is OwlH Client?</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1 current"><a class="reference internal" href="OwlHUC.html">How to use/configure OwlH Components</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="OwlHAllinone.html">OwlH All-in-One configuration</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="OwlHAllinone.html#what-is-owlh-all-in-one">What is OwlH All-In-One?</a></li>
+<li class="toctree-l3"><a class="reference internal" href="OwlHAllinone.html#installation-auto-install">Installation - auto install</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="OwlHAllinone.html#requirements">Requirements</a></li>
+<li class="toctree-l4"><a class="reference internal" href="OwlHAllinone.html#installation">Installation</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="OwlHAllinone.html#check-your-firewall">Check your Firewall</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="OwlHAllinone.html#when-using-iptables">When using iptables</a></li>
+<li class="toctree-l4"><a class="reference internal" href="OwlHAllinone.html#when-using-firewalld">When using firewalld</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="OwlHAllinone.html#point-your-browser">Point your browser</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="OwlHstdonprem.html">OwlH Standard on-prem configuration</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="OwlHstdonprem.html#what-is-owlh-in-standard-on-premises-configuration">What is OwlH in Standard on-premises configuration?</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="OwlHstdonprem.html#if-you-need-help">If you need help:</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="OwlHSTAPrtime.html">OwlH Software TAP real time configuration</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="OwlHSTAPrtime.html#what-is-owlh-software-tap-real-time-configuration-mode">What is OwlH Software TAP real-time configuration mode?</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="OwlHSTAPrtime.html#software-tap-collect-traffic-from-server-instances">Software TAP - Collect traffic from server instances</a></li>
+<li class="toctree-l4"><a class="reference internal" href="OwlHSTAPrtime.html#software-tap-using-aws-vpc-traffic-mirror">Software TAP - Using AWS VPC traffic mirror</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="OwlHsoftwaretap.html">Software TAP for AWS and GCloud - PULL MODE</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="OwlHsoftwaretap.html#owlh-software-tap-to-monitor-traffic-in-cloud-and-remote-sites-environments">OwlH Software TAP to monitor traffic in Cloud and remote sites environments</a></li>
+<li class="toctree-l3"><a class="reference internal" href="OwlHsoftwaretap.html#introduction-what-does-sotwaretap-do-and-how-does-it-work">Introduction: What does SotwareTAP do and how does it work?</a></li>
+<li class="toctree-l3"><a class="reference internal" href="OwlHsoftwaretap.html#main-components">Main Components</a></li>
+<li class="toctree-l3"><a class="reference internal" href="OwlHsoftwaretap.html#owlh-master-orchestration">OwlH Master Orchestration</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="OwlHsoftwaretap.html#prepare-owlh-master-software">Prepare OwlH Master software</a></li>
+<li class="toctree-l4"><a class="reference internal" href="OwlHsoftwaretap.html#owlh-master-ssh-key">OwlH Master ssh Key</a></li>
+<li class="toctree-l4"><a class="reference internal" href="OwlHsoftwaretap.html#create-dummy-interface-for-network-ids">Create Dummy interface for Network IDS</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="OwlHsoftwaretap.html#network-ids-support">Network IDS support</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="OwlHsoftwaretap.html#continuous-network-ids-monitor-and-sniffing">Continuous Network IDS monitor and sniffing</a></li>
+<li class="toctree-l4"><a class="reference internal" href="OwlHsoftwaretap.html#deploy-suricata-as-network-ids">Deploy Suricata as Network IDS</a></li>
+<li class="toctree-l4"><a class="reference internal" href="OwlHsoftwaretap.html#deploy-zeek-as-network-ids">Deploy Zeek as Network IDS</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="OwlHsoftwaretap.html#owlh-master-configuration">OwlH Master Configuration</a></li>
+<li class="toctree-l3"><a class="reference internal" href="OwlHsoftwaretap.html#target-instances">Target Instances</a></li>
+<li class="toctree-l3"><a class="reference internal" href="OwlHsoftwaretap.html#register-your-servers">Register your servers</a></li>
+<li class="toctree-l3"><a class="reference internal" href="OwlHsoftwaretap.html#wazuh-system">Wazuh system</a></li>
+<li class="toctree-l3"><a class="reference internal" href="OwlHsoftwaretap.html#integrate-owlh-master-with-wazuh">Integrate OwlH master with Wazuh</a></li>
+<li class="toctree-l3"><a class="reference internal" href="OwlHsoftwaretap.html#enjoy-it">Enjoy It</a></li>
+<li class="toctree-l3"><a class="reference internal" href="OwlHsoftwaretap.html#if-you-need-help">If you need help:</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="OwlHDispatcher.html">OwlH PCAP collector and dispatcher configuration for load balance your traffic analysis</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="OwlHDispatcher.html#what-is-owlh-dispatcher-configuration">What is OwlH Dispatcher configuration?</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="OwlHForensics.html">OwlH Forensics with Moloch configuration</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="OwlHForensics.html#what-is-moloch">What is Moloch?</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="OwlHForensics.html#if-you-need-help">If you need help:</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="OwlHWazuh.html">OwlH - Suricata and Wazuh</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="OwlHWazuh.html#how-to-easily-integrate-suricata-with-wazuh">How to easily integrate Suricata with Wazuh</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="OwlHWazuh.html#main-steps">Main steps</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="OwlHWazuh.html#deploy-suricata-or-use-a-current-suricata-deployment">Deploy Suricata or use a Current Suricata deployment</a></li>
+<li class="toctree-l3"><a class="reference internal" href="OwlHWazuh.html#configure-suricata-to-store-output-in-json-format-eve-log-configuration">Configure Suricata to store output in JSON format - EVE log configuration</a></li>
+<li class="toctree-l3"><a class="reference internal" href="OwlHWazuh.html#install-wazuh-stack-if-you-are-not-done-yet">Install Wazuh stack if you are not done yet</a></li>
+<li class="toctree-l3"><a class="reference internal" href="OwlHWazuh.html#install-wazuh-agent-in-the-suricata-system">Install Wazuh Agent in the suricata system</a></li>
+<li class="toctree-l3"><a class="reference internal" href="OwlHWazuh.html#configure-wazuh-suricata-rules-to-create-right-alarms">Configure Wazuh Suricata rules to create right alarms</a></li>
+<li class="toctree-l3"><a class="reference internal" href="OwlHWazuh.html#configure-wazuh-agent-to-read-the-eve-json-output-file">Configure Wazuh Agent to read the eve.json output file</a></li>
+<li class="toctree-l3"><a class="reference internal" href="OwlHWazuh.html#if-you-require-pci-configure-owlh-pci-mapping">If you require PCI. Configure OwlH PCI mapping</a></li>
+<li class="toctree-l3"><a class="reference internal" href="OwlHWazuh.html#modify-ip-data-mapping">Modify IP data mapping</a></li>
+<li class="toctree-l3"><a class="reference internal" href="OwlHWazuh.html#modify-elastic-template">Modify Elastic template</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="OwlHWazuh.html#if-you-need-help">If you need help:</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">OwlH - Zeek and Wazuh</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#integration-logical-diagram">Integration Logical Diagram</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#components">Components</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#configure-zeek-owlh-node">Configure - Zeek - OwlH Node</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#zeek-logs-output-format-to-json">Zeek Logs Output format to JSON</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#option-1-modify-ascii-writer-output">Option 1 - Modify ASCII writer output</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#option-2-use-add-json-package">Option 2 - Use add-json package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#zeek-event-enritchment-to-help-wazuh-ruleset">Zeek Event Enritchment to help Wazuh ruleset</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#loading-zeek-customizations-at-zeek-start">Loading Zeek customizations at Zeek start</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#wazuh-agent-configuration">Wazuh Agent configuration</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#configure-wazuh-manager">Configure - Wazuh Manager</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#wazuh-zeek-ids-rules">Wazuh Zeek IDS Rules</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#configure-logstash-server">Configure - Logstash Server</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#logstash-filter">Logstash Filter</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#review-your-kibana-dashboard">Review your Kibana Dashboard</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#if-you-need-help">If you need help:</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="OwlHUI.html">OwlH UI (user interface)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="OwlHUI.html#if-you-need-help">If you need help:</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">owlh</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="OwlHUC.html">How to use/configure OwlH Components</a> &raquo;</li>
+        
+      <li>OwlH - Zeek and Wazuh</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/main/OwlHBro.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="owlh-zeek-and-wazuh">
+<h1>OwlH - Zeek and Wazuh<a class="headerlink" href="#owlh-zeek-and-wazuh" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="integration-logical-diagram">
+<h2>Integration Logical Diagram<a class="headerlink" href="#integration-logical-diagram" title="Permalink to this headline">¶</a></h2>
+<img alt="../_images/broowlh.png" src="../_images/broowlh.png" />
+<div class="section" id="components">
+<h3>Components<a class="headerlink" href="#components" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>OwlH Node - Zeek IDS and Wazuh Agent</li>
+<li>Wazuh Manger</li>
+<li>Logstash Server</li>
+<li>Elastic and Kibana Server</li>
+</ul>
+<p>Let’s see what we need to modify on each component to be able to manage this Bro and Wazuh integration.</p>
+</div>
+</div>
+<div class="section" id="configure-zeek-owlh-node">
+<h2>Configure - Zeek - OwlH Node<a class="headerlink" href="#configure-zeek-owlh-node" title="Permalink to this headline">¶</a></h2>
+<p>This system will require Bro working of course, and Wazuh agent installed. OwlH instructions will help to configure both Bro and Wazuh agent.</p>
+</div>
+<div class="section" id="zeek-logs-output-format-to-json">
+<h2>Zeek Logs Output format to JSON<a class="headerlink" href="#zeek-logs-output-format-to-json" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="option-1-modify-ascii-writer-output">
+<h3>Option 1 - Modify ASCII writer output<a class="headerlink" href="#option-1-modify-ascii-writer-output" title="Permalink to this headline">¶</a></h3>
+<p>you can load the json_logs.bro configuration that will tell ASCII writer to write output in JSON format.
+You must include following line in your .bro configuration files. It can be /etc/bro/site/local.bro or you can follow our recomendation and write the configs in owlh.bro file (please, see below).</p>
+<p>This will modify output and will store just json output, you won’t have ASCII output.</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="nd">@load</span> <span class="n">tuning</span><span class="o">/</span><span class="n">json_logs</span><span class="o">.</span><span class="n">bro</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="option-2-use-add-json-package">
+<h3>Option 2 - Use add-json package<a class="headerlink" href="#option-2-use-add-json-package" title="Permalink to this headline">¶</a></h3>
+<p>Usually, you would like to have both outputs, ASCII and JSON. You can use add-json packet (<a class="reference external" href="https://github.com/J-Gras/add-json">https://github.com/J-Gras/add-json</a>) and load it in your local.bro or owlh.bro.</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="nd">@load</span> <span class="n">packages</span><span class="o">/</span><span class="n">add</span><span class="o">-</span><span class="n">json</span><span class="o">/</span><span class="n">add</span><span class="o">-</span><span class="n">json</span><span class="o">.</span><span class="n">bro</span>
+</pre></div>
+</div>
+<p>To install add-json package you can use bro-pkg tool</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">bro</span><span class="o">-</span><span class="n">pkg</span> <span class="n">install</span> <span class="n">add</span><span class="o">-</span><span class="n">json</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">bro-pkg installation (<a class="reference external" href="http://bro-package-manager.readthedocs.io/en/stable/quickstart.html#installation)*">http://bro-package-manager.readthedocs.io/en/stable/quickstart.html#installation)*</a></p>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Thanks to C.L.Martinez and Jan.Grashoefer</p>
+</div>
+</div>
+<div class="section" id="zeek-event-enritchment-to-help-wazuh-ruleset">
+<h3>Zeek Event Enritchment to help Wazuh ruleset<a class="headerlink" href="#zeek-event-enritchment-to-help-wazuh-ruleset" title="Permalink to this headline">¶</a></h3>
+<p>It is a good idea to help wazuh rules to do their job, to include a field that will identify what kind of log line we are analyzing. Bro output doesn’t include that info per line by default, so we are going to help wazuh by including the field ‘bro_engine’ that will tell wazuh what kind of log is it.</p>
+<p>We are using redef function to include a custom field for each ::Info record of each Protocol. Here are just a few of them, we will include more by default in next releases.</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">redef</span> <span class="n">record</span> <span class="n">DNS</span><span class="p">::</span><span class="n">Info</span> <span class="o">+=</span> <span class="p">{</span>
+    <span class="n">bro_engine</span><span class="p">:</span>    <span class="n">string</span>    <span class="o">&amp;</span><span class="n">default</span><span class="o">=</span><span class="s2">&quot;DNS&quot;</span>    <span class="o">&amp;</span><span class="n">log</span><span class="p">;</span>
+<span class="p">};</span>
+<span class="n">redef</span> <span class="n">record</span> <span class="n">Conn</span><span class="p">::</span><span class="n">Info</span> <span class="o">+=</span> <span class="p">{</span>
+    <span class="n">bro_engine</span><span class="p">:</span>    <span class="n">string</span>    <span class="o">&amp;</span><span class="n">default</span><span class="o">=</span><span class="s2">&quot;CONN&quot;</span>    <span class="o">&amp;</span><span class="n">log</span><span class="p">;</span>
+<span class="p">};</span>
+<span class="n">redef</span> <span class="n">record</span> <span class="n">Weird</span><span class="p">::</span><span class="n">Info</span> <span class="o">+=</span> <span class="p">{</span>
+    <span class="n">bro_engine</span><span class="p">:</span>    <span class="n">string</span>    <span class="o">&amp;</span><span class="n">default</span><span class="o">=</span><span class="s2">&quot;WEIRD&quot;</span>    <span class="o">&amp;</span><span class="n">log</span><span class="p">;</span>
+<span class="p">};</span>
+<span class="n">redef</span> <span class="n">record</span> <span class="n">SSL</span><span class="p">::</span><span class="n">Info</span> <span class="o">+=</span> <span class="p">{</span>
+    <span class="n">bro_engine</span><span class="p">:</span>    <span class="n">string</span>    <span class="o">&amp;</span><span class="n">default</span><span class="o">=</span><span class="s2">&quot;SSL&quot;</span>    <span class="o">&amp;</span><span class="n">log</span><span class="p">;</span>
+<span class="p">};</span>
+<span class="n">redef</span> <span class="n">record</span> <span class="n">SSH</span><span class="p">::</span><span class="n">Info</span> <span class="o">+=</span> <span class="p">{</span>
+    <span class="n">bro_engine</span><span class="p">:</span>    <span class="n">string</span>    <span class="o">&amp;</span><span class="n">default</span><span class="o">=</span><span class="s2">&quot;SSH&quot;</span>    <span class="o">&amp;</span><span class="n">log</span><span class="p">;</span>
+<span class="p">};</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="loading-zeek-customizations-at-zeek-start">
+<h3>Loading Zeek customizations at Zeek start<a class="headerlink" href="#loading-zeek-customizations-at-zeek-start" title="Permalink to this headline">¶</a></h3>
+<p>We include all OwlH customizations in OwlH_*.bro files, that helps to have a clear view of what OwlH does as well as we hope it will simplify configuration management.</p>
+<p>Under /etc/bro/site we will create two files</p>
+<ul class="simple">
+<li>owlh.bro - Will include JSON call and &#64;load for bro_engine field definition.</li>
+<li>owlh_types.bro - Will include all redef statments</li>
+</ul>
+<p>You will only need to load OwlH.bro at the end of your local.bro file to include all these configurations</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="nd">@load</span> <span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">bro</span><span class="o">/</span><span class="n">site</span><span class="o">/</span><span class="n">OwlH</span><span class="o">.</span><span class="n">bro</span>
+</pre></div>
+</div>
+<p>owlh.bro looks like:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="c1"># Select prefered output</span>
+<span class="c1">#@load tuning/json-logs.bro</span>
+<span class="nd">@load</span> <span class="n">packages</span><span class="o">/</span><span class="n">add</span><span class="o">-</span><span class="n">json</span><span class="o">/</span><span class="n">add</span><span class="o">-</span><span class="n">json</span><span class="o">.</span><span class="n">bro</span>
+<span class="nd">@load</span> <span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">bro</span><span class="o">/</span><span class="n">site</span><span class="o">/</span><span class="n">owlh_types</span><span class="o">.</span><span class="n">bro</span>
+</pre></div>
+</div>
+<p>and owlh_types.bro:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">redef</span> <span class="n">record</span> <span class="n">DNS</span><span class="p">::</span><span class="n">Info</span> <span class="o">+=</span> <span class="p">{</span>
+    <span class="n">bro_engine</span><span class="p">:</span>    <span class="n">string</span>    <span class="o">&amp;</span><span class="n">default</span><span class="o">=</span><span class="s2">&quot;DNS&quot;</span>    <span class="o">&amp;</span><span class="n">log</span><span class="p">;</span>
+<span class="p">};</span>
+<span class="n">redef</span> <span class="n">record</span> <span class="n">Conn</span><span class="p">::</span><span class="n">Info</span> <span class="o">+=</span> <span class="p">{</span>
+    <span class="n">bro_engine</span><span class="p">:</span>    <span class="n">string</span>    <span class="o">&amp;</span><span class="n">default</span><span class="o">=</span><span class="s2">&quot;CONN&quot;</span>    <span class="o">&amp;</span><span class="n">log</span><span class="p">;</span>
+<span class="p">};</span>
+<span class="n">redef</span> <span class="n">record</span> <span class="n">Weird</span><span class="p">::</span><span class="n">Info</span> <span class="o">+=</span> <span class="p">{</span>
+    <span class="n">bro_engine</span><span class="p">:</span>    <span class="n">string</span>    <span class="o">&amp;</span><span class="n">default</span><span class="o">=</span><span class="s2">&quot;WEIRD&quot;</span>    <span class="o">&amp;</span><span class="n">log</span><span class="p">;</span>
+<span class="p">};</span>
+<span class="n">redef</span> <span class="n">record</span> <span class="n">SSL</span><span class="p">::</span><span class="n">Info</span> <span class="o">+=</span> <span class="p">{</span>
+    <span class="n">bro_engine</span><span class="p">:</span>    <span class="n">string</span>    <span class="o">&amp;</span><span class="n">default</span><span class="o">=</span><span class="s2">&quot;SSL&quot;</span>    <span class="o">&amp;</span><span class="n">log</span><span class="p">;</span>
+<span class="p">};</span>
+<span class="n">redef</span> <span class="n">record</span> <span class="n">SSH</span><span class="p">::</span><span class="n">Info</span> <span class="o">+=</span> <span class="p">{</span>
+    <span class="n">bro_engine</span><span class="p">:</span>    <span class="n">string</span>    <span class="o">&amp;</span><span class="n">default</span><span class="o">=</span><span class="s2">&quot;SSH&quot;</span>    <span class="o">&amp;</span><span class="n">log</span><span class="p">;</span>
+<span class="p">};</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="wazuh-agent-configuration">
+<h2>Wazuh Agent configuration<a class="headerlink" href="#wazuh-agent-configuration" title="Permalink to this headline">¶</a></h2>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Remember we are on Bro Node component.*</p>
+</div>
+<p>Modify your Wazuh agent to read the Bro Logs files</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="n">localfile</span><span class="o">&gt;</span>
+  <span class="o">&lt;</span><span class="n">log_format</span><span class="o">&gt;</span><span class="n">syslog</span><span class="o">&lt;/</span><span class="n">log_format</span><span class="o">&gt;</span>
+  <span class="o">&lt;</span><span class="n">location</span><span class="o">&gt;/</span><span class="n">path</span><span class="o">/</span><span class="n">to</span><span class="o">/</span><span class="n">bro</span><span class="o">/</span><span class="n">logs</span><span class="o">/*.</span><span class="n">log</span><span class="o">&lt;/</span><span class="n">location</span><span class="o">&gt;</span>
+<span class="o">&lt;/</span><span class="n">localfile</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">if needed, You can specify files instead of all .log ones</p>
+</div>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="n">localfile</span><span class="o">&gt;</span>
+  <span class="o">&lt;</span><span class="n">log_format</span><span class="o">&gt;</span><span class="n">syslog</span><span class="o">&lt;/</span><span class="n">log_format</span><span class="o">&gt;</span>
+  <span class="o">&lt;</span><span class="n">location</span><span class="o">&gt;/</span><span class="n">path</span><span class="o">/</span><span class="n">to</span><span class="o">/</span><span class="n">bro</span><span class="o">/</span><span class="n">logs</span><span class="o">/</span><span class="n">weird</span><span class="o">.</span><span class="n">log</span><span class="o">&lt;/</span><span class="n">location</span><span class="o">&gt;</span>
+<span class="o">&lt;/</span><span class="n">localfile</span><span class="o">&gt;</span>
+<span class="o">&lt;</span><span class="n">localfile</span><span class="o">&gt;</span>
+  <span class="o">&lt;</span><span class="n">log_format</span><span class="o">&gt;</span><span class="n">syslog</span><span class="o">&lt;/</span><span class="n">log_format</span><span class="o">&gt;</span>
+  <span class="o">&lt;</span><span class="n">location</span><span class="o">&gt;/</span><span class="n">path</span><span class="o">/</span><span class="n">to</span><span class="o">/</span><span class="n">bro</span><span class="o">/</span><span class="n">logs</span><span class="o">/</span><span class="n">conn</span><span class="o">.</span><span class="n">log</span><span class="o">&lt;/</span><span class="n">location</span><span class="o">&gt;</span>
+<span class="o">&lt;/</span><span class="n">localfile</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="configure-wazuh-manager">
+<h2>Configure - Wazuh Manager<a class="headerlink" href="#configure-wazuh-manager" title="Permalink to this headline">¶</a></h2>
+<p>Good news is that Wazuh’s JSON decoder works really great, so using JSON output from BRO allow us to save time developing an specific decoder for its standard ASCII out.</p>
+<p>We only need to create a few rules to identify the Bro events and forward them to ELK.</p>
+</div>
+<div class="section" id="wazuh-zeek-ids-rules">
+<h2>Wazuh Zeek IDS Rules<a class="headerlink" href="#wazuh-zeek-ids-rules" title="Permalink to this headline">¶</a></h2>
+<p>Include the Wazuh rules into your /var/ossec/etc/rules/zeek-rules.xml file to manage your Zeek logs</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="n">group</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;zeek&quot;</span><span class="o">&gt;</span>
+  <span class="o">&lt;</span><span class="n">rule</span> <span class="nb">id</span><span class="o">=</span><span class="s2">&quot;990001&quot;</span> <span class="n">level</span><span class="o">=</span><span class="s2">&quot;5&quot;</span><span class="o">&gt;</span>
+    <span class="o">&lt;</span><span class="n">field</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;bro_engine&quot;</span><span class="o">&gt;</span><span class="n">SSH</span><span class="o">&lt;/</span><span class="n">field</span><span class="o">&gt;</span>
+    <span class="o">&lt;</span><span class="n">description</span><span class="o">&gt;</span><span class="n">Zeek</span><span class="p">:</span> <span class="n">SSH</span> <span class="n">Connection</span><span class="o">&lt;/</span><span class="n">description</span><span class="o">&gt;</span>
+  <span class="o">&lt;/</span><span class="n">rule</span><span class="o">&gt;</span>
+  <span class="o">&lt;</span><span class="n">rule</span> <span class="nb">id</span><span class="o">=</span><span class="s2">&quot;990002&quot;</span> <span class="n">level</span><span class="o">=</span><span class="s2">&quot;5&quot;</span><span class="o">&gt;</span>
+    <span class="o">&lt;</span><span class="n">field</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;bro_engine&quot;</span><span class="o">&gt;</span><span class="n">SSL</span><span class="o">&lt;/</span><span class="n">field</span><span class="o">&gt;</span>
+    <span class="o">&lt;</span><span class="n">description</span><span class="o">&gt;</span><span class="n">Zeek</span><span class="p">:</span> <span class="n">SSL</span> <span class="n">Connection</span><span class="o">&lt;/</span><span class="n">description</span><span class="o">&gt;</span>
+  <span class="o">&lt;/</span><span class="n">rule</span><span class="o">&gt;</span>
+  <span class="o">&lt;</span><span class="n">rule</span> <span class="nb">id</span><span class="o">=</span><span class="s2">&quot;990003&quot;</span> <span class="n">level</span><span class="o">=</span><span class="s2">&quot;5&quot;</span><span class="o">&gt;</span>
+    <span class="o">&lt;</span><span class="n">field</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;bro_engine&quot;</span><span class="o">&gt;</span><span class="n">DNS</span><span class="o">&lt;/</span><span class="n">field</span><span class="o">&gt;</span>
+    <span class="o">&lt;</span><span class="n">description</span><span class="o">&gt;</span><span class="n">Zeek</span><span class="p">:</span> <span class="n">DNS</span> <span class="n">Query</span><span class="o">&lt;/</span><span class="n">description</span><span class="o">&gt;</span>
+  <span class="o">&lt;/</span><span class="n">rule</span><span class="o">&gt;</span>
+  <span class="o">&lt;</span><span class="n">rule</span> <span class="nb">id</span><span class="o">=</span><span class="s2">&quot;990004&quot;</span> <span class="n">level</span><span class="o">=</span><span class="s2">&quot;5&quot;</span><span class="o">&gt;</span>
+    <span class="o">&lt;</span><span class="n">field</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;bro_engine&quot;</span><span class="o">&gt;</span><span class="n">CONN</span><span class="o">&lt;/</span><span class="n">field</span><span class="o">&gt;</span>
+    <span class="o">&lt;</span><span class="n">description</span><span class="o">&gt;</span><span class="n">Zeek</span><span class="p">:</span> <span class="n">Connection</span> <span class="n">detail</span><span class="o">&lt;/</span><span class="n">description</span><span class="o">&gt;</span>
+  <span class="o">&lt;/</span><span class="n">rule</span><span class="o">&gt;</span>
+<span class="o">&lt;/</span><span class="n">group</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">remember restart your wazuh agent after change.*</p>
+</div>
+</div>
+<div class="section" id="configure-logstash-server">
+<h2>Configure - Logstash Server<a class="headerlink" href="#configure-logstash-server" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="logstash-filter">
+<h2>Logstash Filter<a class="headerlink" href="#logstash-filter" title="Permalink to this headline">¶</a></h2>
+<p>We need to modify Logstash filters (/etc/logstash/conf.d/) to allow JSON record cleaning from Bro to Wazuh-alert index parsing.
+<em>It is necesary because bro uses [id] field to group network src and dest addresses and ports info and parsing will fail</em></p>
+<p><em>Also, it is done so we can store IP-PORT data in the right fields for wazuh index</em></p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="nb">filter</span> <span class="p">{</span>
+     <span class="k">if</span> <span class="p">[</span><span class="n">data</span><span class="p">][</span><span class="nb">id</span><span class="p">][</span><span class="n">orig_h</span><span class="p">]</span> <span class="p">{</span>
+          <span class="n">mutate</span> <span class="p">{</span>
+             <span class="n">add_field</span> <span class="o">=&gt;</span> <span class="p">[</span> <span class="s2">&quot;[data][srcip]&quot;</span><span class="p">,</span> <span class="s2">&quot;%{[data][id][orig_h]}&quot;</span> <span class="p">]</span>
+             <span class="n">add_field</span> <span class="o">=&gt;</span> <span class="p">[</span> <span class="s2">&quot;[data][dstip]&quot;</span><span class="p">,</span> <span class="s2">&quot;%{[data][id][resp_h]}&quot;</span> <span class="p">]</span>
+             <span class="n">add_field</span> <span class="o">=&gt;</span> <span class="p">[</span> <span class="s2">&quot;[data][srcport]&quot;</span><span class="p">,</span> <span class="s2">&quot;%{[data][id][orig_p]}&quot;</span> <span class="p">]</span>
+             <span class="n">add_field</span> <span class="o">=&gt;</span> <span class="p">[</span> <span class="s2">&quot;[data][dstport]&quot;</span><span class="p">,</span> <span class="s2">&quot;%{[data][id][resp_p]}&quot;</span> <span class="p">]</span>
+             <span class="n">remove_field</span> <span class="o">=&gt;</span> <span class="p">[</span> <span class="s2">&quot;[data][id]&quot;</span> <span class="p">]</span>
+         <span class="p">}</span>
+     <span class="p">}</span>
+ <span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="review-your-kibana-dashboard">
+<h2>Review your Kibana Dashboard<a class="headerlink" href="#review-your-kibana-dashboard" title="Permalink to this headline">¶</a></h2>
+<p>You will need to refresh your Wazuh-alerts-3.x indeces to include the new Zeek fields. from your kibana console, go to Management -&gt; index -&gt; select right wazuh-alerts index -&gt; click top-right refresh icon to refresh</p>
+<img alt="../_images/kibanabro.png" src="../_images/kibanabro.png" />
+<p>And that’s all folks.</p>
+<div class="section" id="if-you-need-help">
+<h3>If you need help:<a class="headerlink" href="#if-you-need-help" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>email our support team - <a class="reference external" href="mailto:support&#37;&#52;&#48;owlh&#46;net">support<span>&#64;</span>owlh<span>&#46;</span>net</a></li>
+<li>visit our mailing list - <a class="reference external" href="https://groups.google.com/d/forum/owlh">OwlH mailing list</a> (<a class="reference external" href="mailto:owlh&#37;&#52;&#48;googlegroups&#46;com">owlh<span>&#64;</span>googlegroups<span>&#46;</span>com</a>)</li>
+</ul>
+<p><strong>OwlH - current v0.10.x - Oct</strong> - <a class="reference external" href="https://github.com/OwlH-net/roadmap/blob/master/README.md">OwlH Changelog</a></p>
+<p>documentation last updated - Nov 01, 2019</p>
+</div>
+</div>
+</div>
+
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+      
+        <a href="OwlHWazuh.html" class="btn btn-neutral" title="OwlH - Suricata and Wazuh" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2018, owlh team.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'0.4 - Cloud and Bro',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>
