@@ -4,7 +4,7 @@ OwlH Documentation home
 About OwlH
 ==========
 
-    v0.14.0
+    v0.14.x
 
 This picture will summarize the process we are working in.
 
