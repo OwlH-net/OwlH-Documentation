@@ -1,5 +1,5 @@
-Main.Conf file
-==============
+Main Configuration files (main.conf)
+====================================
 
 
 there are main.conf files in owlh node and owlh master
@@ -7,7 +7,7 @@ there are main.conf files in owlh node and owlh master
 you can find details about each file here: 
 
 .. toctree::
-   :maxdepth: 1
+  :maxdepth: 1
 
-   main/OwlHMasterMainConf
-   main/OwlHNodeMainConf
+  OwlHMasterMainConf
+  OwlHNodeMainConf

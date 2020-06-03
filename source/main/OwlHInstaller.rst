@@ -120,5 +120,3 @@ Files to take into account to update. This files are verified and compared betwe
 
 
 
-.. include:: /main/contact.rst
-

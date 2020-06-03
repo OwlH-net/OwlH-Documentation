@@ -6,13 +6,16 @@ Sync with ELK 7.x
 
     Be sure you are running ELK (elasticsearch, filebeat and kibana) with version >7.3.2
 
+.. include:: keepincontact.rst
+
+
 We will need to modify a bit the Wazuh's default filebeat configuration, we will do:
 
   * import OwlH-Kibana objects in Kibana
   * load OwlH template in Elasticsearch
   * install OwlH-Filebeat module
   * modify Wazuh's module to exclude OwlH Lines
-  * modify Filebeat main configuration to include OwlH node
+  * modify Filebeat main configuration to include OwlH module
 
 
 .. attention::

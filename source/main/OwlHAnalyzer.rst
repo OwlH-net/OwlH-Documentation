@@ -1,0 +1,35 @@
+Analyzer configuration file 
+===========================
+
+.. code-block:: JSON
+
+  
+  {
+    "enable":true,
+    "outputfile":"/var/log/owlh/alerts.json",
+    "prefilterfile":"conf/prefilters.json",
+    "postfilterfile":"conf/postfilters.json",
+    "tagsfile":"conf/tags.json",
+    "srcfiles": [
+        "/var/log/suricata/eve.json",
+        "/usr/local/zeek/logs/current/conn.log",
+        "/usr/local/zeek/logs/current/dns.log"
+    ],
+    "feedfiles": [
+        {
+            "feedfile":"/usr/local/owlh/src/owlhnode/conf/feeds/otx.feed",
+            "workers":4
+        },
+        {
+            "feedfile":"/tmp/local.feed"
+        },
+        {
+            "feedfile":"/usr/local/owlh/src/owlhnode/conf/feeds/xforce.feed",
+            "workers":4
+        },
+        {
+            "feedfile":"/usr/local/owlh/src/owlhnode/conf/feeds/falcon.feed",
+            "workers":4
+        }
+    ]
+  }

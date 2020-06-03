@@ -1,6 +1,6 @@
 
-What's your need?
-=================
+Use Cases
+=========
 
 
 What do you want to achieve with NIDS platform in your Network?
@@ -21,8 +21,10 @@ ADVANCED
 INTEGRATE WITH WAZUH
 --------------------
 
-  * Just sent default Suricata alerts to Wazuh-ELK
+  :doc:`Integrate with Wazuh <OwlHWazuh>`
+
+  This will help you:
+
+  * Just send default Suricata alerts to Wazuh-ELK
   * Unify Suricata and Zeek outputs, send to Wazuh-ELK and visualize with some cool dashboard
 
-
-.. include:: /main/contact.rst

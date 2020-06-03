@@ -1,11 +1,8 @@
 OwlH UI (user interface)
 ==============================
 
-.. attention::
-    v0.11.0 UI doc Draft
 
-
-.. image:: /img/UI-home.png
+.. image:: /img/UI-nodes-main.png
 
 User Interface - top menu
 -------------------------
@@ -15,9 +12,7 @@ User Interface - top menu
 
     /main/UITOP/OwlHUINODE
     /main/UITOP/OwlHUIGROUPS
-    /main/UITOP/OwlHUIOPENRULES
+    /main/UITOP/OwlHUIOPENRULES 
     /main/UITOP/OwlHUIMASTER
     /main/UITOP/OwlHUICONFIG
 
-
-.. include:: /main/contact.rst

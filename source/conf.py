@@ -54,7 +54,7 @@ master_doc = 'index'
 
 # General information about the project.
 project = u'owlh'
-copyright = u'2018, owlh team'
+copyright = u'2020, owlh team'
 author = u'owlh team'
 
 # The version info for the project you're documenting, acts as replacement for
@@ -62,7 +62,7 @@ author = u'owlh team'
 # built documents.
 #
 # The short X.Y version.
-version = u'0.4'
+version = u'0.14.0'
 # The full version, including alpha/beta/rc tags.
 release = u'0.4 - Cloud and Bro'
 
