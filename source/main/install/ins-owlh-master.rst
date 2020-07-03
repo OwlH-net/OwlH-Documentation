@@ -22,7 +22,7 @@ Install OwlH Master
   "uitarfile":"owlhui.tar.gz",
   "tmpfolder":"/tmp/",
   "action": "install",      <===
-  "repourl":"http://repo.owlh.net/current/",
+  "repourl":"http://repo.owlh.net/current-centos/",    <=== Be sure to set right repo
   "target": [
       "owlhmaster",         <===
       "owlhui"              <===
@@ -55,6 +55,17 @@ Install OwlH Master
 .. attention::
     you can change your installation paths as needed. Changing default paths may need further paths change for some configurations like service init files. If you are not familiar with it, keep defaults until it is really needed or ask for help.
 
+
+Verify your libpcap library is installed. 
+`````````````````````````````````````````````````````
+
+::
+
+    CentOS: 
+        # yum -y install libpcap0.8
+    Debian/Ubuntu: 
+        # apt-cache -y install libpcap
+
 run OwlH Installer to install OwlH UI and OwlH Master
 `````````````````````````````````````````````````````
 
@@ -70,13 +81,13 @@ Configure your Master and UI
     if CentOs:
         # wget http://repo.owlh.net/current-centos/services/owlhui-httpd.sh
         # bash owlhui-httpd.sh
-        # wget http://repo.owlh.net/current-centos/services/owlhmaster-service.sh
-        # bash owlhmaster-service.sh
     if Debian/Ubuntu:
         # wget http://repo.owlh.net/current-debian/services/owlhui-httpd.sh
         # bash owlhui-httpd.sh
-        # wget http://repo.owlh.net/current-debian/services/owlhmaster-service.sh
-        # bash owlhmaster-service.sh
+    both OS:
+        # cp /usr/local/owlh/src/owlhmaster/conf/service/owlhmaster.service /etc/systemd/system
+        # systemctl daemon-reload
+        # systemctl start owlhmaster.service
 
 
 
@@ -110,7 +121,7 @@ modify your config.json file to set action as "update".
   ...
   "tmpfolder":"/tmp/",
   "action": "update",      <===
-  "repourl":"http://repo.owlh.net/current/",  <=== Repo url may vary
+  "repourl":"http://repo.owlh.net/current-centos/",  <=== Repo url may vary
   "target": [
       "owlhmaster"            <===
   ],
