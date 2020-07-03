@@ -67,9 +67,9 @@ We will reduce and manage which repository to be used from our own installer. Bu
 
 Current repositories depending on your OS based system, are:
 
-:centos: http://repo.owlh.net/current/
 :centos: http://repo.owlh.net/current-centos/
 :debian: http://repo.owlh.net/current-debian/
+:arm: http://repo.owlh.net/current-arm/
 
 
 Targets
