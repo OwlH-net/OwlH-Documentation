@@ -62,9 +62,9 @@ Verify your libpcap library is installed.
 ::
 
     CentOS: 
-        # yum -y install libpcap0.8
+        # yum -y install libpcap
     Debian/Ubuntu: 
-        # apt-cache -y install libpcap
+        # apt-cache -y install libpcap0.8
 
 run OwlH Installer to install OwlH UI and OwlH Master
 `````````````````````````````````````````````````````
