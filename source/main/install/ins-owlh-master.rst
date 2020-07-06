@@ -5,7 +5,7 @@ Install OwlH Master
 
 
 .. note:: 
-    Right now, our target is "owlhui" and "owlhmaster", our action is "install"
+    Right now, our target is "owlhui" and "owlhmaster", our action is "install".
 
 :: 
 
