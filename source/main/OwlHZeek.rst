@@ -35,10 +35,10 @@ This will modify output and will store just json output, you won't have ASCII ou
 
 ::
 
-    @load tuning/json_logs.zeek
+    @load tuning/json-logs.zeek
 
 
-Zeek Event Enritchment to help Wazuh ruleset
+Zeek Event Enrichment to help Wazuh ruleset
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 It is a good idea to help wazuh rules to do their job, to include a field that will identify what kind of log line we are analyzing. Bro output doesn't include that info per line by default, so we are going to help wazuh by including the field 'bro_engine' that will tell wazuh what kind of log is it. 
