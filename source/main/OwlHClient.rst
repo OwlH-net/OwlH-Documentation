@@ -25,6 +25,7 @@ configuration is in the same folder as well as logs will be store in this folder
 configuration file conf.json looks like this: 
 
 ::
+    
     {
         "collectorIP":"10.13.1.13",
         "collectorPort":"50010",
