@@ -11,12 +11,30 @@ This OwlH client is useful when you are running OwlH in any Software TAP configu
 Install 
 -------
 
-Currently OwlH Client is available for: 
+**Currently OwlH Client is available for: **
 
 ::
 
     CentOS -> repo.owlh.net/current-centos/owlhclient.sh
     Debian/Ubuntu -> repo.owlh.net/current-debian/owlhclient.sh
+
+
+.. Attention::
+
+    **For Windows users**
+
+    You can manage your STAP client configuration running following command
+
+    ::
+        
+
+        C:\windump\windump -i 1 -nn -s0 -w - not port 50010| C:\cygwin64\bin\socat  - OPENSSL:192.168.142.149:50010,cert=/usr/local/certs/ca.pem,verify=0,forever,retry=0,interval=5
+
+    To be able to run this in a windows 2012 R2 or newer you will need few packets. 
+
+    * Windump and wimpcap
+    * Socat (installed with Cygwin) 
+
 
 OwlH Client will be installed on 
   
