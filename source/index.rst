@@ -4,7 +4,7 @@ OwlH Documentation home
 About OwlH
 ==========
 
-    v0.14.x
+    v0.17.x
 
 This picture will summarize the process we are working in.
 
@@ -32,7 +32,7 @@ As per our latest version, in OwlH solution you may find:
 
 .. _OwlH Changelog: https://github.com/OwlH-net/roadmap/blob/master/README.md
 
-**OwlH - current v0.14.x - Mar** - `OwlH Changelog`_
+**OwlH - current v0.17.x** - `OwlH Changelog`_
 
 .. toctree::
     :maxdepth: 1
