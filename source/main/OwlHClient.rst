@@ -13,16 +13,23 @@ Install
 
 Currently OwlH Client is available for: 
 
-  CentOS -> repo.owlh.net/current-centos/owlhclient.sh
-  Debian/Ubuntu -> repo.owlh.net/current-debian/owlhclient.sh
+::
+
+    CentOS -> repo.owlh.net/current-centos/owlhclient.sh
+    Debian/Ubuntu -> repo.owlh.net/current-debian/owlhclient.sh
 
 OwlH Client will be installed on 
   
+::
+
   /usr/local/owlh/bin/
 
-configuration is in the same folder as well as logs will be store in this folder too. 
+.. note::
 
-configuration file conf.json looks like this: 
+    Configuration file and log files (one log file per interface) are in the same folder.
+
+
+Configuration file conf.json looks like this: 
 
 ::
 
