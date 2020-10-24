@@ -1,0 +1,376 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Suricata in trouble? &mdash; owlh 0.17.x documentation</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="index" title="Index"
+              href="../../genindex.html"/>
+        <link rel="search" title="Search" href="../../search.html"/>
+    <link rel="top" title="owlh 0.17.x documentation" href="../../index.html"/> 
+
+  
+  <script src="../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> owlh
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.17.x
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../OwlHGS.html">Getting Started with OwlH</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../components.html">Components</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../components.html#owlh-master">OwlH Master</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../components.html#owlh-node">OwlH Node</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../components.html#owlh-ui">OwlH UI</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../components.html#owlh-client">OwlH Client</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../capabilities.html">Capabilities</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../capabilities.html#nids-and-traffic-analysis-support">NIDS and Traffic analysis support</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../capabilities.html#top-capabilities">Top capabilities</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../capabilities.html#traffic-transport-and-management">Traffic transport and management</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../capabilities.html#owlh-plugins">OwlH Plugins</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../capabilities.html#others">Others</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../architecture.html">Architecture</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../architecture.html#standard-data-flow">Standard data flow</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../architecture.html#inside-owlh-node">Inside OwlH Node</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../architecture.html#used-ports">Used ports</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../OwlHInstall.html">Install OwlH</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../OwlHInstall.html#owlh-installer">OwlH Installer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../OwlHInstall.html#install-components">Install components</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../OwlHInstall.html#standard-installation">Standard Installation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../OwlHInstall.html#advanced-installation">Advanced Installation</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../OwlHInstall.html#configure">Configure</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../OwlHInstall.html#visualization">Visualization</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../OwlHInstall.html#appendices">Appendices</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../OwlHUpdate.html">Update and upgrade OwlH</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../OwlHUpdate.html#owlh-components">OwlH components</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../OwlHUM.html">User Manual</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../OwlHFC.html">First configuration</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../OwlHFC.html#user-interface">User Interface</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../OwlHFC.html#analyzer">Analyzer</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../OwlHFC.html#suricata">Suricata</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../OwlHFC.html#zeek">Zeek</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../OwlHFC.html#wazuh">Wazuh</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../OwlHCF.html">Configuration Files</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../OwlHapiconf.html">API service configuration files</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../OwlHapiconf.html#node-configuration">Node configuration</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../OwlHapiconf.html#master-configuration">Master configuration</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../OwlHmainconf.html">Main Configuration files (main.conf)</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../OwlHMasterMainConf.html">Master Main Configuration file</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../OwlHNodeMainConf.html">Node Main Configuration file</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../OwlHAnalyzer.html">Analyzer configuration file</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../OwlHAPI.html">OwlH API</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../OwlHAPIM.html">OwlH MASTER RESTful API</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../OwlHAPIN.html">OwlH NODE RESTful API</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../OwlHTroubleshooting.html">Troubleshooting</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../OwlHTroubleshooting.html#owlh-node">OwlH Node</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../OwlHTroubleshooting.html#owlh-master">OwlH Master</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../OwlHTroubleshooting.html#owlh-ui">OwlH UI</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../lookingfor.html">Looking for…</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../OwlHSuricata.html">OwlH and Suricata</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../OwlHSuricata.html#main-steps">Main steps</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../OwlHSuricata.html#suricata-output-with-owlh">Suricata output with OwlH</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../OwlHSuricata.html#suricata-rules">Suricata Rules</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../OwlHZeek.html">OwlH and Zeek</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../OwlHZeek.html#integration-logical-diagram">Integration Logical Diagram</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../OwlHZeek.html#components">Components</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../OwlHZeek.html#configure-zeek-owlh-node">Configure - Zeek - OwlH Node</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../OwlHZeek.html#zeek-logs-output-format-to-json">Zeek Logs Output format to JSON</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../OwlHZeek.html#option-1-modify-ascii-writer-output">Option 1 - Modify ASCII writer output</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../OwlHZeek.html#zeek-event-enritchment-to-help-wazuh-ruleset">Zeek Event Enritchment to help Wazuh ruleset</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../OwlHZeek.html#loading-zeek-customizations-at-zeek-start">Loading Zeek customizations at Zeek start</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../OwlHZeek.html#review-your-kibana-dashboard">Review your Kibana Dashboard</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../OwlHMoloch.html">OwlH and Moloch</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../OwlHMoloch.html#configure-moloch">Configure Moloch</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../OwlHMoloch.html#moloch-in-master">Moloch in Master</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../OwlHMoloch.html#moloch-in-remote-server">Moloch in remote server</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../scenarios.html">Use Cases</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../scenarios.html#basic">BASIC</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../scenarios.html#advanced">ADVANCED</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../scenarios.html#integrate-with-wazuh">INTEGRATE WITH WAZUH</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../contact.html">If you need help</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">owlh</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html">Docs</a> &raquo;</li>
+        
+      <li>Suricata in trouble?</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../_sources/main/TS/suricata.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="suricata-in-trouble">
+<h1>Suricata in trouble?<a class="headerlink" href="#suricata-in-trouble" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="suricata-running">
+<h2>Suricata running?<a class="headerlink" href="#suricata-running" title="Permalink to this headline">¶</a></h2>
+<p>from UI you can see it is enabled and not running</p>
+<img alt="../../_images/surionstop.png" src="../../_images/surionstop.png" />
+</div>
+<div class="section" id="process-running">
+<h2>Process running<a class="headerlink" href="#process-running" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-default"><div class="highlight"><pre><span></span># ps -aux | grep suricata
+  root      5625     1  7 05:55 ?        00:00:02 suricata -D -c /etc/suricata/suricata.yaml -i eth0 -F /etc/suricata/bpf/9cf70176-59e8-aa42-40bd-f4f7ca281cca-filter.bpf --pidfile /var/run/suricata/9cf70176-59e8-aa42-40bd-f4f7ca281cca-pidfile.pid
+</pre></div>
+</div>
+</div>
+<div class="section" id="does-suricata-load-rules">
+<h2>Does Suricata load rules?<a class="headerlink" href="#does-suricata-load-rules" title="Permalink to this headline">¶</a></h2>
+<p>Check if suricata load rules when it start</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="c1"># /usr/bin/suricata -i eth0 -c /etc/suricata/suricata.yaml -vvv | grep &quot;signatured processed&quot;</span>
+  <span class="mi">1</span><span class="o">/</span><span class="mi">4</span><span class="o">/</span><span class="mi">2020</span> <span class="o">--</span> <span class="mi">07</span><span class="p">:</span><span class="mi">24</span><span class="p">:</span><span class="mi">23</span> <span class="o">-</span> <span class="o">&lt;</span><span class="n">Info</span><span class="o">&gt;</span> <span class="o">-</span> <span class="mi">18973</span> <span class="n">signatures</span> <span class="n">processed</span><span class="o">.</span> <span class="mi">1176</span> <span class="n">are</span> <span class="n">IP</span><span class="o">-</span><span class="n">only</span> <span class="n">rules</span><span class="p">,</span> <span class="mi">6207</span> <span class="n">are</span> <span class="n">inspecting</span> <span class="n">packet</span> <span class="n">payload</span><span class="p">,</span> <span class="mi">13790</span> <span class="n">inspect</span> <span class="n">application</span> <span class="n">layer</span><span class="p">,</span> <span class="mi">0</span> <span class="n">are</span> <span class="n">decoder</span> <span class="n">event</span> <span class="n">only</span>
+</pre></div>
+</div>
+<p>You can run the command without grep for verbose output.</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="c1"># /usr/bin/suricata -i eth0 -c /etc/suricata/suricata.yaml -vvv</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="does-suricata-create-alerts">
+<h1>Does Suricata create alerts?<a class="headerlink" href="#does-suricata-create-alerts" title="Permalink to this headline">¶</a></h1>
+<p>Check alert events in your eve.json file</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="c1"># tail -f /var/log/suricata/eve.json | grep `&quot;event_type&quot;:&quot;alert&quot;`</span>
+<span class="p">{</span><span class="s2">&quot;timestamp&quot;</span><span class="p">:</span><span class="s2">&quot;2020-04-01T10:51:30.478227+0000&quot;</span><span class="p">,</span><span class="s2">&quot;flow_id&quot;</span><span class="p">:</span><span class="mi">1255158863546086</span><span class="p">,</span><span class="s2">&quot;in_iface&quot;</span><span class="p">:</span><span class="s2">&quot;eth0&quot;</span><span class="p">,</span><span class="s2">&quot;event_type&quot;</span><span class="p">:</span><span class="s2">&quot;alert&quot;</span><span class="p">,</span><span class="s2">&quot;src_ip&quot;</span><span class="p">:</span><span class="s2">&quot;31.3.245.133&quot;</span><span class="p">,</span><span class="s2">&quot;src_port&quot;</span><span class="p">:</span><span class="mi">80</span><span class="p">,</span><span class="s2">&quot;dest_ip&quot;</span><span class="p">:</span><span class="s2">&quot;172.31.41.217&quot;</span><span class="p">,</span><span class="s2">&quot;dest_port&quot;</span><span class="p">:</span><span class="mi">44728</span><span class="p">,</span><span class="s2">&quot;proto&quot;</span><span class="p">:</span><span class="s2">&quot;TCP&quot;</span><span class="p">,</span><span class="s2">&quot;alert&quot;</span><span class="p">:{</span><span class="s2">&quot;action&quot;</span><span class="p">:</span><span class="s2">&quot;allowed&quot;</span><span class="p">,</span><span class="s2">&quot;gid&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span><span class="s2">&quot;signature_id&quot;</span><span class="p">:</span><span class="mi">2100498</span><span class="p">,</span><span class="s2">&quot;rev&quot;</span><span class="p">:</span><span class="mi">7</span><span class="p">,</span><span class="s2">&quot;signature&quot;</span><span class="p">:</span><span class="s2">&quot;GPL ATTACK_RESPONSE id check returned root&quot;</span><span class="p">,</span><span class="s2">&quot;category&quot;</span><span class="p">:</span><span class="s2">&quot;Potentially Bad Traffic&quot;</span><span class="p">,</span><span class="s2">&quot;severity&quot;</span><span class="p">:</span><span class="mi">2</span><span class="p">},</span><span class="s2">&quot;app_proto&quot;</span><span class="p">:</span><span class="s2">&quot;http&quot;</span><span class="p">,</span><span class="s2">&quot;payload&quot;</span><span class="p">:</span><span class="s2">&quot;SFRUUC8xLjEgMjAwIE9LDQpTZXJ2ZXI6IG5naW54LzEuMTYuMQ0KRGF0ZTogV2VkLCAwMSBBcHIgMjAyMCAxMDo1MTozNCBHTVQNCkNvbnRlbnQtVHlwZTogdGV4dC9odG1sOyBjaGFyc2V0PVVURi04DQpDb250ZW50LUxlbmd0aDogMzkNCkNvbm5lY3Rpb246IGtlZXAtYWxpdmUNCkxhc3QtTW9kaWZpZWQ6IEZyaSwgMTAgSmFuIDIwMjAgMjE6MzY6MDIgR01UDQpFVGFnOiAiMjctNTliY2ZlOTkzMmMzMiINCkFjY2VwdC1SYW5nZXM6IGJ5dGVzDQoNCnVpZD0wKHJvb3QpIGdpZD0wKHJvb3QpIGdyb3Vwcz0wKHJvb3QpCg==&quot;</span><span class="p">,</span><span class="s2">&quot;payload_printable&quot;</span><span class="p">:</span><span class="s2">&quot;HTTP\/1.1 200 OK</span><span class="se">\r\n</span><span class="s2">Server: nginx\/1.16.1</span><span class="se">\r\n</span><span class="s2">Date: Wed, 01 Apr 2020 10:51:34 GMT</span><span class="se">\r\n</span><span class="s2">Content-Type: text\/html; charset=UTF-8</span><span class="se">\r\n</span><span class="s2">Content-Length: 39</span><span class="se">\r\n</span><span class="s2">Connection: keep-alive</span><span class="se">\r\n</span><span class="s2">Last-Modified: Fri, 10 Jan 2020 21:36:02 GMT</span><span class="se">\r\n</span><span class="s2">ETag: </span><span class="se">\&quot;</span><span class="s2">27-59bcfe9932c32</span><span class="se">\&quot;\r\n</span><span class="s2">Accept-Ranges: bytes</span><span class="se">\r\n\r\n</span><span class="s2">uid=0(root) gid=0(root) groups=0(root)</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span><span class="s2">&quot;stream&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span><span class="s2">&quot;packet&quot;</span><span class="p">:</span><span class="s2">&quot;Dt8rrqqUDqXY+b1cCABFAAA0Zy5AACoG\/xQfA\/WFrB8p2QBQrrgnSkD1NyXWA4ARAONxyAAAAQEICsUcWO8TCsQI&quot;</span><span class="p">,</span><span class="s2">&quot;packet_info&quot;</span><span class="p">:{</span><span class="s2">&quot;linktype&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">}}</span>
+</pre></div>
+</div>
+<div class="section" id="traffic-quality">
+<h2>Traffic quality<a class="headerlink" href="#traffic-quality" title="Permalink to this headline">¶</a></h2>
+<p><a class="reference internal" href="trafficqa.html"><span class="doc">does traffic has the right quality?</span></a></p>
+<hr class="docutils" />
+</div>
+</div>
+
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2020, owlh team.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../',
+            VERSION:'0.17.x',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

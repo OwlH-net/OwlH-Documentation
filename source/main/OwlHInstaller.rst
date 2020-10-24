@@ -60,16 +60,15 @@ OwlH repository
 
 ::
 
-  "repourl":"http://repo.owlh.net/current/",
+  "repourl":"https://repo.owlh.net/current-xxxxxxx/",
 
 There will be different repositories depending on your OS. 
-We will reduce and manage which repository to be used from our own installer. But in current version we must include the right repository that must be used. 
 
 Current repositories depending on your OS based system, are:
 
-:centos: http://repo.owlh.net/current-centos/
-:debian: http://repo.owlh.net/current-debian/
-:arm: http://repo.owlh.net/current-arm/
+:centos: https://repo.owlh.net/current-centos/
+:debian: https://repo.owlh.net/current-debian/
+:arm: https://repo.owlh.net/current-arm/
 
 
 Targets
@@ -118,5 +117,9 @@ Configuration files to update
 
 Files to take into account to update. This files are verified and compared between new version and current deployment when you are running and update action. update process does not overwrite current files or DB, it just add the new default fields or database reference. you don't need to take care of those files, but if you don't wont a file or db to be updated by installer you can remove it from here. 
 
+Coming Capabilities 
+-------------------
 
-
+:Auto update: OwlH Installer will recognize there is a new version and will update itself before running. 
+:Off-line or blind update: Downloaded packets for Node, Master and UI will be used instead of access internet to download them.
+:Deployment scripts: will Include and execute scripts like Suricata and Zeek deployments, Httpd daemon configuration, OwlH interface for STAP, etc. 

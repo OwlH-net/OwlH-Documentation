@@ -86,6 +86,18 @@ Check if your OwlH Node is running
     check if owlhnode service port is listening
     # netstat -nputa | grep 50002
 
+
+Deploy Suricata and Zeek
+````````````````````````
+
+Use these scripts to deploy Suricata and Zeek in your OwlH Node. Change current-centos, current-debian or current-arm as needed. 
+
+:suricata: wget repo.owlh.net/current-debian/services/owlhsuricata.sh
+:zeek: wget repo.owlh.net/current-debian/services/owlhzeek.sh
+
+Scripts will use source files to install Suricata and Zeek. After installation is done, you will need to configure both on UI.
+
+
 Register your new node in your OwlH Master
 ``````````````````````````````````````````
 

@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>OwlH - Suricata and Wazuh &mdash; owlh 0.4 - Cloud and Bro documentation</title>
+  <title>Integration with Wazuh-ELK &mdash; owlh 0.17.x documentation</title>
   
 
   
@@ -37,10 +37,7 @@
         <link rel="index" title="Index"
               href="../genindex.html"/>
         <link rel="search" title="Search" href="../search.html"/>
-    <link rel="top" title="owlh 0.4 - Cloud and Bro documentation" href="../index.html"/>
-        <link rel="up" title="How to use/configure OwlH Components" href="OwlHUC.html"/>
-        <link rel="next" title="OwlH - Zeek and Wazuh" href="OwlHBro.html"/>
-        <link rel="prev" title="OwlH Forensics with Moloch configuration" href="OwlHForensics.html"/> 
+    <link rel="top" title="owlh 0.17.x documentation" href="../index.html"/> 
 
   
   <script src="../_static/js/modernizr.min.js"></script>
@@ -69,7 +66,7 @@
             
             
               <div class="version">
-                0.4
+                0.17.x
               </div>
             
           
@@ -93,152 +90,122 @@
               
             
             
-              <ul class="current">
+              <ul>
 <li class="toctree-l1"><a class="reference internal" href="OwlHGS.html">Getting Started with OwlH</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="OwlHGS.html#components">Components</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="OwlHNode.html">OwlH Node</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="OwlHNode.html#what-is-owlh-node">What is OwlH Node?</a></li>
-<li class="toctree-l4"><a class="reference internal" href="OwlHNode.html#how-to-install-owlh-node">How to install OwlH Node</a></li>
+<li class="toctree-l2"><a class="reference internal" href="components.html">Components</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="components.html#owlh-master">OwlH Master</a></li>
+<li class="toctree-l3"><a class="reference internal" href="components.html#owlh-node">OwlH Node</a></li>
+<li class="toctree-l3"><a class="reference internal" href="components.html#owlh-ui">OwlH UI</a></li>
+<li class="toctree-l3"><a class="reference internal" href="components.html#owlh-client">OwlH Client</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="OwlHMaster.html">OwlH Master</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="OwlHMaster.html#what-is-owlh-master">What is OwlH Master?</a></li>
-<li class="toctree-l4"><a class="reference internal" href="OwlHMaster.html#install-owlh-master">Install OwlH Master</a></li>
+<li class="toctree-l2"><a class="reference internal" href="capabilities.html">Capabilities</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="capabilities.html#nids-and-traffic-analysis-support">NIDS and Traffic analysis support</a></li>
+<li class="toctree-l3"><a class="reference internal" href="capabilities.html#top-capabilities">Top capabilities</a></li>
+<li class="toctree-l3"><a class="reference internal" href="capabilities.html#traffic-transport-and-management">Traffic transport and management</a></li>
+<li class="toctree-l3"><a class="reference internal" href="capabilities.html#owlh-plugins">OwlH Plugins</a></li>
+<li class="toctree-l3"><a class="reference internal" href="capabilities.html#others">Others</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="OwlHUI.html">OwlH UI (user interface)</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="OwlHUI.html#if-you-need-help">If you need help:</a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="OwlHInstaller.html">OwlH Installer</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="OwlHInstaller.html#what-is-owlh-installer">What is OwlH Installer?</a></li>
-<li class="toctree-l4"><a class="reference internal" href="OwlHInstaller.html#prepare-your-owlh-installer">Prepare your OwlH Installer</a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="OwlHClient.html">OwlH Client</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="OwlHClient.html#what-is-owlh-client">What is OwlH Client?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="architecture.html">Architecture</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="architecture.html#standard-data-flow">Standard data flow</a></li>
+<li class="toctree-l3"><a class="reference internal" href="architecture.html#inside-owlh-node">Inside OwlH Node</a></li>
+<li class="toctree-l3"><a class="reference internal" href="architecture.html#used-ports">Used ports</a></li>
 </ul>
 </li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="OwlHInstall.html">Install OwlH</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="OwlHInstall.html#owlh-installer">OwlH Installer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="OwlHInstall.html#install-components">Install components</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="OwlHInstall.html#standard-installation">Standard Installation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="OwlHInstall.html#advanced-installation">Advanced Installation</a></li>
 </ul>
 </li>
-<li class="toctree-l1 current"><a class="reference internal" href="OwlHUC.html">How to use/configure OwlH Components</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="OwlHAllinone.html">OwlH All-in-One configuration</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="OwlHAllinone.html#what-is-owlh-all-in-one">What is OwlH All-In-One?</a></li>
-<li class="toctree-l3"><a class="reference internal" href="OwlHAllinone.html#installation-auto-install">Installation - auto install</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="OwlHAllinone.html#requirements">Requirements</a></li>
-<li class="toctree-l4"><a class="reference internal" href="OwlHAllinone.html#installation">Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="OwlHInstall.html#configure">Configure</a></li>
+<li class="toctree-l2"><a class="reference internal" href="OwlHInstall.html#visualization">Visualization</a></li>
+<li class="toctree-l2"><a class="reference internal" href="OwlHInstall.html#appendices">Appendices</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="OwlHAllinone.html#check-your-firewall">Check your Firewall</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="OwlHAllinone.html#when-using-iptables">When using iptables</a></li>
-<li class="toctree-l4"><a class="reference internal" href="OwlHAllinone.html#when-using-firewalld">When using firewalld</a></li>
+<li class="toctree-l1"><a class="reference internal" href="OwlHUpdate.html">Update and upgrade OwlH</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="OwlHUpdate.html#owlh-components">OwlH components</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="OwlHAllinone.html#point-your-browser">Point your browser</a></li>
+<li class="toctree-l1"><a class="reference internal" href="OwlHUM.html">User Manual</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="OwlHFC.html">First configuration</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="OwlHFC.html#user-interface">User Interface</a></li>
+<li class="toctree-l3"><a class="reference internal" href="OwlHFC.html#analyzer">Analyzer</a></li>
+<li class="toctree-l3"><a class="reference internal" href="OwlHFC.html#suricata">Suricata</a></li>
+<li class="toctree-l3"><a class="reference internal" href="OwlHFC.html#zeek">Zeek</a></li>
+<li class="toctree-l3"><a class="reference internal" href="OwlHFC.html#wazuh">Wazuh</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="OwlHstdonprem.html">OwlH Standard on-prem configuration</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="OwlHstdonprem.html#what-is-owlh-in-standard-on-premises-configuration">What is OwlH in Standard on-premises configuration?</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="OwlHstdonprem.html#if-you-need-help">If you need help:</a></li>
+<li class="toctree-l2"><a class="reference internal" href="OwlHCF.html">Configuration Files</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="OwlHapiconf.html">API service configuration files</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="OwlHapiconf.html#node-configuration">Node configuration</a></li>
+<li class="toctree-l4"><a class="reference internal" href="OwlHapiconf.html#master-configuration">Master configuration</a></li>
 </ul>
 </li>
+<li class="toctree-l3"><a class="reference internal" href="OwlHmainconf.html">Main Configuration files (main.conf)</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="OwlHMasterMainConf.html">Master Main Configuration file</a></li>
+<li class="toctree-l4"><a class="reference internal" href="OwlHNodeMainConf.html">Node Main Configuration file</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="OwlHSTAPrtime.html">OwlH Software TAP real time configuration</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="OwlHSTAPrtime.html#what-is-owlh-software-tap-real-time-configuration-mode">What is OwlH Software TAP real-time configuration mode?</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="OwlHSTAPrtime.html#software-tap-collect-traffic-from-server-instances">Software TAP - Collect traffic from server instances</a></li>
-<li class="toctree-l4"><a class="reference internal" href="OwlHSTAPrtime.html#software-tap-using-aws-vpc-traffic-mirror">Software TAP - Using AWS VPC traffic mirror</a></li>
+<li class="toctree-l3"><a class="reference internal" href="OwlHAnalyzer.html">Analyzer configuration file</a></li>
 </ul>
 </li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="OwlHsoftwaretap.html">Software TAP for AWS and GCloud - PULL MODE</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="OwlHsoftwaretap.html#owlh-software-tap-to-monitor-traffic-in-cloud-and-remote-sites-environments">OwlH Software TAP to monitor traffic in Cloud and remote sites environments</a></li>
-<li class="toctree-l3"><a class="reference internal" href="OwlHsoftwaretap.html#introduction-what-does-sotwaretap-do-and-how-does-it-work">Introduction: What does SotwareTAP do and how does it work?</a></li>
-<li class="toctree-l3"><a class="reference internal" href="OwlHsoftwaretap.html#main-components">Main Components</a></li>
-<li class="toctree-l3"><a class="reference internal" href="OwlHsoftwaretap.html#owlh-master-orchestration">OwlH Master Orchestration</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="OwlHsoftwaretap.html#prepare-owlh-master-software">Prepare OwlH Master software</a></li>
-<li class="toctree-l4"><a class="reference internal" href="OwlHsoftwaretap.html#owlh-master-ssh-key">OwlH Master ssh Key</a></li>
-<li class="toctree-l4"><a class="reference internal" href="OwlHsoftwaretap.html#create-dummy-interface-for-network-ids">Create Dummy interface for Network IDS</a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="OwlHsoftwaretap.html#network-ids-support">Network IDS support</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="OwlHsoftwaretap.html#continuous-network-ids-monitor-and-sniffing">Continuous Network IDS monitor and sniffing</a></li>
-<li class="toctree-l4"><a class="reference internal" href="OwlHsoftwaretap.html#deploy-suricata-as-network-ids">Deploy Suricata as Network IDS</a></li>
-<li class="toctree-l4"><a class="reference internal" href="OwlHsoftwaretap.html#deploy-zeek-as-network-ids">Deploy Zeek as Network IDS</a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="OwlHsoftwaretap.html#owlh-master-configuration">OwlH Master Configuration</a></li>
-<li class="toctree-l3"><a class="reference internal" href="OwlHsoftwaretap.html#target-instances">Target Instances</a></li>
-<li class="toctree-l3"><a class="reference internal" href="OwlHsoftwaretap.html#register-your-servers">Register your servers</a></li>
-<li class="toctree-l3"><a class="reference internal" href="OwlHsoftwaretap.html#wazuh-system">Wazuh system</a></li>
-<li class="toctree-l3"><a class="reference internal" href="OwlHsoftwaretap.html#integrate-owlh-master-with-wazuh">Integrate OwlH master with Wazuh</a></li>
-<li class="toctree-l3"><a class="reference internal" href="OwlHsoftwaretap.html#enjoy-it">Enjoy It</a></li>
-<li class="toctree-l3"><a class="reference internal" href="OwlHsoftwaretap.html#if-you-need-help">If you need help:</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="OwlHDispatcher.html">OwlH PCAP collector and dispatcher configuration for load balance your traffic analysis</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="OwlHDispatcher.html#what-is-owlh-dispatcher-configuration">What is OwlH Dispatcher configuration?</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="OwlHForensics.html">OwlH Forensics with Moloch configuration</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="OwlHForensics.html#what-is-moloch">What is Moloch?</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="OwlHForensics.html#if-you-need-help">If you need help:</a></li>
+<li class="toctree-l2"><a class="reference internal" href="OwlHAPI.html">OwlH API</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="OwlHAPIM.html">OwlH MASTER RESTful API</a></li>
+<li class="toctree-l3"><a class="reference internal" href="OwlHAPIN.html">OwlH NODE RESTful API</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">OwlH - Suricata and Wazuh</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#how-to-easily-integrate-suricata-with-wazuh">How to easily integrate Suricata with Wazuh</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#main-steps">Main steps</a></li>
+<li class="toctree-l1"><a class="reference internal" href="OwlHTroubleshooting.html">Troubleshooting</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="OwlHTroubleshooting.html#owlh-node">OwlH Node</a></li>
+<li class="toctree-l2"><a class="reference internal" href="OwlHTroubleshooting.html#owlh-master">OwlH Master</a></li>
+<li class="toctree-l2"><a class="reference internal" href="OwlHTroubleshooting.html#owlh-ui">OwlH UI</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="#deploy-suricata-or-use-a-current-suricata-deployment">Deploy Suricata or use a Current Suricata deployment</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#configure-suricata-to-store-output-in-json-format-eve-log-configuration">Configure Suricata to store output in JSON format - EVE log configuration</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#install-wazuh-stack-if-you-are-not-done-yet">Install Wazuh stack if you are not done yet</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#install-wazuh-agent-in-the-suricata-system">Install Wazuh Agent in the suricata system</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#configure-wazuh-suricata-rules-to-create-right-alarms">Configure Wazuh Suricata rules to create right alarms</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#configure-wazuh-agent-to-read-the-eve-json-output-file">Configure Wazuh Agent to read the eve.json output file</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#if-you-require-pci-configure-owlh-pci-mapping">If you require PCI. Configure OwlH PCI mapping</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#modify-ip-data-mapping">Modify IP data mapping</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#modify-elastic-template">Modify Elastic template</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#if-you-need-help">If you need help:</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lookingfor.html">Looking for…</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="OwlHSuricata.html">OwlH and Suricata</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="OwlHSuricata.html#main-steps">Main steps</a></li>
+<li class="toctree-l3"><a class="reference internal" href="OwlHSuricata.html#suricata-output-with-owlh">Suricata output with OwlH</a></li>
+<li class="toctree-l3"><a class="reference internal" href="OwlHSuricata.html#suricata-rules">Suricata Rules</a></li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="OwlHZeek.html">OwlH and Zeek</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="OwlHZeek.html#integration-logical-diagram">Integration Logical Diagram</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="OwlHZeek.html#components">Components</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="OwlHBro.html">OwlH - Zeek and Wazuh</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="OwlHBro.html#integration-logical-diagram">Integration Logical Diagram</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="OwlHBro.html#components">Components</a></li>
+<li class="toctree-l3"><a class="reference internal" href="OwlHZeek.html#configure-zeek-owlh-node">Configure - Zeek - OwlH Node</a></li>
+<li class="toctree-l3"><a class="reference internal" href="OwlHZeek.html#zeek-logs-output-format-to-json">Zeek Logs Output format to JSON</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="OwlHZeek.html#option-1-modify-ascii-writer-output">Option 1 - Modify ASCII writer output</a></li>
+<li class="toctree-l4"><a class="reference internal" href="OwlHZeek.html#zeek-event-enritchment-to-help-wazuh-ruleset">Zeek Event Enritchment to help Wazuh ruleset</a></li>
+<li class="toctree-l4"><a class="reference internal" href="OwlHZeek.html#loading-zeek-customizations-at-zeek-start">Loading Zeek customizations at Zeek start</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="OwlHBro.html#configure-zeek-owlh-node">Configure - Zeek - OwlH Node</a></li>
-<li class="toctree-l3"><a class="reference internal" href="OwlHBro.html#zeek-logs-output-format-to-json">Zeek Logs Output format to JSON</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="OwlHBro.html#option-1-modify-ascii-writer-output">Option 1 - Modify ASCII writer output</a></li>
-<li class="toctree-l4"><a class="reference internal" href="OwlHBro.html#option-2-use-add-json-package">Option 2 - Use add-json package</a></li>
-<li class="toctree-l4"><a class="reference internal" href="OwlHBro.html#zeek-event-enritchment-to-help-wazuh-ruleset">Zeek Event Enritchment to help Wazuh ruleset</a></li>
-<li class="toctree-l4"><a class="reference internal" href="OwlHBro.html#loading-zeek-customizations-at-zeek-start">Loading Zeek customizations at Zeek start</a></li>
+<li class="toctree-l3"><a class="reference internal" href="OwlHZeek.html#review-your-kibana-dashboard">Review your Kibana Dashboard</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="OwlHBro.html#wazuh-agent-configuration">Wazuh Agent configuration</a></li>
-<li class="toctree-l3"><a class="reference internal" href="OwlHBro.html#configure-wazuh-manager">Configure - Wazuh Manager</a></li>
-<li class="toctree-l3"><a class="reference internal" href="OwlHBro.html#wazuh-zeek-ids-rules">Wazuh Zeek IDS Rules</a></li>
-<li class="toctree-l3"><a class="reference internal" href="OwlHBro.html#configure-logstash-server">Configure - Logstash Server</a></li>
-<li class="toctree-l3"><a class="reference internal" href="OwlHBro.html#logstash-filter">Logstash Filter</a></li>
-<li class="toctree-l3"><a class="reference internal" href="OwlHBro.html#review-your-kibana-dashboard">Review your Kibana Dashboard</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="OwlHBro.html#if-you-need-help">If you need help:</a></li>
+<li class="toctree-l2"><a class="reference internal" href="OwlHMoloch.html">OwlH and Moloch</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="OwlHMoloch.html#configure-moloch">Configure Moloch</a></li>
+<li class="toctree-l3"><a class="reference internal" href="OwlHMoloch.html#moloch-in-master">Moloch in Master</a></li>
+<li class="toctree-l3"><a class="reference internal" href="OwlHMoloch.html#moloch-in-remote-server">Moloch in remote server</a></li>
 </ul>
 </li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="scenarios.html">Use Cases</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="scenarios.html#basic">BASIC</a></li>
+<li class="toctree-l2"><a class="reference internal" href="scenarios.html#advanced">ADVANCED</a></li>
+<li class="toctree-l2"><a class="reference internal" href="scenarios.html#integrate-with-wazuh">INTEGRATE WITH WAZUH</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="OwlHUI.html">OwlH UI (user interface)</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="OwlHUI.html#if-you-need-help">If you need help:</a></li>
 </ul>
-</li>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="contact.html">If you need help</a></li>
 </ul>
 
             
@@ -283,9 +250,7 @@
     
       <li><a href="../index.html">Docs</a> &raquo;</li>
         
-          <li><a href="OwlHUC.html">How to use/configure OwlH Components</a> &raquo;</li>
-        
-      <li>OwlH - Suricata and Wazuh</li>
+      <li>Integration with Wazuh-ELK</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -304,221 +269,59 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="owlh-suricata-and-wazuh">
-<h1>OwlH - Suricata and Wazuh<a class="headerlink" href="#owlh-suricata-and-wazuh" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="how-to-easily-integrate-suricata-with-wazuh">
-<h2>How to easily integrate Suricata with Wazuh<a class="headerlink" href="#how-to-easily-integrate-suricata-with-wazuh" title="Permalink to this headline">¶</a></h2>
-<p>This will introduce an easy way to integrate your Suricata output into Wazuh world. this is a one-way integration process, from your Suricata node to your Wazuh Dashboard. OwlH will help also to manage your Suricata nodes configuration and rules, and many other things. but right now, let’s integrate your Suricata node with Wazuh.</p>
+  <div class="section" id="integration-with-wazuh-elk">
+<h1>Integration with Wazuh-ELK<a class="headerlink" href="#integration-with-wazuh-elk" title="Permalink to this headline">¶</a></h1>
+<p>if you want to send OwlH output including Suricata and Zeek alerts and logs to Wazuh-ELK</p>
+<p>This will help to integrate your NIDS alerts and output into Wazuh world. this is a one-way integration process.</p>
 <p>As usual, please keep in contact if there is any clarification or help needed.</p>
-<blockquote>
-<div><ul class="simple">
+<ul class="simple">
 <li>email our support team - <a class="reference external" href="mailto:support&#37;&#52;&#48;owlh&#46;net">support<span>&#64;</span>owlh<span>&#46;</span>net</a></li>
-<li>visit our mailing list - <a class="reference external" href="https://groups.google.com/d/forum/owlh">OwlH mailing list</a> (<a class="reference external" href="mailto:owlh&#37;&#52;&#48;googlegroups&#46;com">owlh<span>&#64;</span>googlegroups<span>&#46;</span>com</a>)</li>
+<li>join OwlH slack - <a class="reference external" href="https://join.slack.com/t/owlh/shared_invite/enQtNjE2NTEwODUzNTExLTJlNTdlMDRiMzM0ZTVhNWQ0YWE4YzgyYWQ4ZGYyMDQzMzM5NDA1M2I3NDlhYTFkNjdhZTk0MzFjMGU3ZWI3ZDM">OwlH Slack workspace</a></li>
+<li>ask for professional support and services - <a class="reference external" href="mailto:prohelp&#37;&#52;&#48;owlh&#46;net">prohelp<span>&#64;</span>owlh<span>&#46;</span>net</a></li>
 </ul>
-</div></blockquote>
 <div class="section" id="main-steps">
-<h3>Main steps<a class="headerlink" href="#main-steps" title="Permalink to this headline">¶</a></h3>
+<h2>Main steps<a class="headerlink" href="#main-steps" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li>Deploy Suricata or use a Current Suricata deployment</li>
-<li>Configure Suricata to store output in JSON format - EVE log configuration</li>
-<li>Install Wazuh stack if you are not done yet</li>
-<li>Install Wazuh Agent in the suricata system</li>
-<li>Configure Wazuh Suricata rules to create right alarms</li>
-<li>Configure Wazuh Agent to read the eve.json output file</li>
-<li>If you require PCI. Configure OwlH PCI mapping</li>
-<li>Modify Elastic template</li>
-</ul>
-<p>And what’s next?</p>
-<ul class="simple">
-<li>OwlH Network IDS Dashboards</li>
-<li>OwlH Network IDS Configuration management</li>
-<li>OwlH Network IDS Rule management</li>
+<li>Install and register your Wazuh Agent in the OwlH Node</li>
+<li>Configure Wazuh Agent to read the OwlH Node output</li>
+<li>Enable OwlH Node Analyzer</li>
+<li>Add OwlH filebeat Module in your OwlH Manager</li>
+<li>Import OwlH dashboards in your ELK Kibana</li>
 </ul>
 <hr class="docutils" />
-<img alt="../_images/suricatawazuh.png" src="../_images/suricatawazuh.png" />
-</div>
-</div>
-<div class="section" id="deploy-suricata-or-use-a-current-suricata-deployment">
-<h2>Deploy Suricata or use a Current Suricata deployment<a class="headerlink" href="#deploy-suricata-or-use-a-current-suricata-deployment" title="Permalink to this headline">¶</a></h2>
-<p>We assume that you will use a new Suricata deployment or you will use a current one. Both will work. In this procedure, we relay on Wazuh agent to do the collection work, so if your platform supports wazuh agent you should be able to integrate your Suricata too. Most usual environments are supported by both, but anyway, please, verify Suricata and Wazuh-agent requirements to find the right match.</p>
-</div>
-<div class="section" id="configure-suricata-to-store-output-in-json-format-eve-log-configuration">
-<h2>Configure Suricata to store output in JSON format - EVE log configuration<a class="headerlink" href="#configure-suricata-to-store-output-in-json-format-eve-log-configuration" title="Permalink to this headline">¶</a></h2>
-<p>By default Suricata configuration file suricata.yaml has the EVE (Extensible Event Format) enabled and configured to store the output in JSON format. But, anyway is a good idea to review that configuration and verify that we have all the info we want in the output file.</p>
-<p>Output file is usually - /var/log/suricata/eve.json</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="n">tail</span> <span class="o">-</span><span class="n">f</span> <span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">log</span><span class="o">/</span><span class="n">suricata</span><span class="o">/</span><span class="n">eve</span><span class="o">.</span><span class="n">json</span> <span class="n">will</span> <span class="n">help</span> <span class="n">you</span> <span class="n">to</span> <span class="n">verify</span> <span class="n">that</span> <span class="n">configuration</span> <span class="ow">is</span> <span class="n">working</span><span class="o">.</span>
+<div class="section" id="install-wazuh-agent">
+<h3>Install Wazuh Agent<a class="headerlink" href="#install-wazuh-agent" title="Permalink to this headline">¶</a></h3>
+<p>Run OwlH wazuh agent script to install Wazuh-agent in your OwlH Node.</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="c1"># wget repo.owlh.net/current-centos/services/owlhwazuh.sh</span>
+<span class="c1"># bash owlhwazuh.sh</span>
 </pre></div>
 </div>
-<p>Here you have a <strong>SAMPLE</strong> eve-log configuration. Please, there are great configuration settings to use, so expend some time, review your <a class="reference external" href="https://suricata.readthedocs.io/en/suricata-4.0.4/configuration/suricata-yaml.html#eve-extensible-event-format">Suricata documentation</a> and find the right configuration for your needs.</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">outputs</span><span class="p">:</span>
-  <span class="o">-</span> <span class="n">eve</span><span class="o">-</span><span class="n">log</span><span class="p">:</span>
-    <span class="n">enabled</span><span class="p">:</span> <span class="n">yes</span>
-    <span class="n">filetype</span><span class="p">:</span> <span class="n">regular</span> <span class="c1">#regular|syslog|unix_dgram|unix_stream|redis</span>
-    <span class="n">filename</span><span class="p">:</span> <span class="n">eve</span><span class="o">.</span><span class="n">json</span>
-    <span class="n">types</span><span class="p">:</span>
-      <span class="o">-</span> <span class="n">alert</span><span class="p">:</span>
-        <span class="n">metadata</span><span class="p">:</span> <span class="n">yes</span>
-        <span class="n">tagged</span><span class="o">-</span><span class="n">packets</span><span class="p">:</span> <span class="n">yes</span>
-        <span class="n">xff</span><span class="p">:</span>
-          <span class="n">enabled</span><span class="p">:</span> <span class="n">yes</span>
-          <span class="n">mode</span><span class="p">:</span> <span class="n">extra</span><span class="o">-</span><span class="n">data</span>
-      <span class="o">-</span> <span class="n">http</span><span class="p">:</span>
-        <span class="n">extended</span><span class="p">:</span> <span class="n">yes</span>
-      <span class="o">-</span> <span class="n">dns</span><span class="p">:</span>
-        <span class="n">query</span><span class="p">:</span> <span class="n">yes</span>     <span class="c1"># enable logging of DNS queries</span>
-        <span class="n">answer</span><span class="p">:</span> <span class="n">yes</span>    <span class="c1"># enable logging of DNS answers</span>
-      <span class="o">-</span> <span class="n">tls</span><span class="p">:</span>
-        <span class="n">extended</span><span class="p">:</span> <span class="n">yes</span>     <span class="c1"># enable this for extended logging information</span>
-      <span class="o">-</span> <span class="n">files</span><span class="p">:</span>
-        <span class="n">force</span><span class="o">-</span><span class="n">magic</span><span class="p">:</span> <span class="n">no</span>   <span class="c1"># force logging magic on all logged files</span>
-      <span class="o">-</span> <span class="n">smtp</span><span class="p">:</span>
-        <span class="n">extended</span><span class="p">:</span> <span class="n">yes</span> <span class="c1"># enable this for extended logging information</span>
-      <span class="o">-</span> <span class="n">ssh</span>
-      <span class="o">-</span> <span class="n">flow</span>
+<p>Register your Wazuh Agent with your Wazuh Manager, and modify the ossec.conf file to point to it as needed. Please follow your Wazuh deployment process to run this step or refer to Wazuh’s documentation.</p>
+</div>
+<div class="section" id="configure-wazuh-agent-to-read-owlh-output">
+<h3>Configure Wazuh Agent to read OwlH output<a class="headerlink" href="#configure-wazuh-agent-to-read-owlh-output" title="Permalink to this headline">¶</a></h3>
+<p>We need to tell our Wazuh Agent to read the OwlH Output where NIDS alerts and logs are stored. The file is created by the OwlH Analyzer and by default is /var/owlh/alerts.json. Be sure Analyzer is configured and working</p>
+<p>You can configure this from User Interface:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">UI</span> <span class="o">-&gt;</span> <span class="n">nodes</span> <span class="o">-&gt;</span> <span class="n">search</span> <span class="n">your</span> <span class="n">node</span> <span class="o">-&gt;</span> <span class="n">node</span> <span class="n">services</span> <span class="n">configuration</span> <span class="o">-&gt;</span> <span class="n">Wazuh</span> <span class="o">-&gt;</span> <span class="n">add</span> <span class="n">file</span>
+<span class="n">include</span> <span class="n">the</span> <span class="n">alerts</span><span class="o">.</span><span class="n">json</span> <span class="n">path</span> <span class="n">where</span> <span class="n">Analyzer</span> <span class="ow">is</span> <span class="n">storing</span> <span class="n">events</span>
+<span class="n">save</span> <span class="ow">and</span> <span class="n">reload</span> <span class="n">Wazuh</span>
 </pre></div>
 </div>
+<p>You can verify if there are new lines in the alerts.json file, UI will show current size and you can refresh it. also, you can verify ossec.log file to check if there are any errors.</p>
+<p>To monitor ossec.log file:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">UI</span> <span class="o">-&gt;</span> <span class="n">nodes</span> <span class="o">-&gt;</span> <span class="n">search</span> <span class="n">your</span> <span class="n">node</span> <span class="o">-&gt;</span> <span class="n">monitor</span> <span class="n">node</span> <span class="o">-&gt;</span> <span class="n">add</span> <span class="n">file</span>
+<span class="n">include</span> <span class="n">your</span> <span class="n">ossec</span><span class="o">.</span><span class="n">log</span> <span class="n">file</span> <span class="o">-&gt;</span> <span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">ossec</span><span class="o">/</span><span class="n">logs</span><span class="o">/</span><span class="n">ossec</span><span class="o">.</span><span class="n">log</span>
+<span class="n">review</span> <span class="n">the</span> <span class="n">latest</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">50</span> <span class="ow">or</span> <span class="mi">100</span> <span class="n">lines</span><span class="o">.</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="wazuh-manager-and-elk-configuration">
+<h3>Wazuh manager and ELK configuration<a class="headerlink" href="#wazuh-manager-and-elk-configuration" title="Permalink to this headline">¶</a></h3>
+<p>Now you need to ensure that your Wazuh Manager is configured to manage OwlH output and is able to send to ELK properly. Also you may need to import in your ELK the default OwlH Dashboards</p>
+<p>Follow the instructions here.</p>
 <ul class="simple">
-<li>Suricata <a class="reference external" href="https://raw.githubusercontent.com/owlh/wazuhenrichment/master/eve-log.yaml">eve-log sample file</a></li>
+<li><a class="reference internal" href="OwlH-elk.html"><span class="doc">ELK integration</span></a></li>
 </ul>
-<p><strong>Remember</strong> to restart your Suricata service after any change in your configuration file and check your Suricata logs.</p>
-</div>
-<div class="section" id="install-wazuh-stack-if-you-are-not-done-yet">
-<h2>Install Wazuh stack if you are not done yet<a class="headerlink" href="#install-wazuh-stack-if-you-are-not-done-yet" title="Permalink to this headline">¶</a></h2>
-<p>We are integrating Suricata with Wazuh, so we need to have Wazuh Manager and elastic stack running before to end our configuration. At least we will need a Wazuh Manager connected to the elastic stack.</p>
-<p>Please, follow <a class="reference external" href="https://documentation.wazuh.com/current/installation-guide/index.html">Wazuh install guide</a> to deploy manager and elastic stack. If you have this done, you can skip this step.</p>
-</div>
-<div class="section" id="install-wazuh-agent-in-the-suricata-system">
-<h2>Install Wazuh Agent in the suricata system<a class="headerlink" href="#install-wazuh-agent-in-the-suricata-system" title="Permalink to this headline">¶</a></h2>
-<p>Wazuh Agent will be the transporter of our Suricata output. It provides a secure communication channel between our Suricata node and Wazuh Manager and the storage repository. Of course, Wazuh Agent does a lot more, it will help us to take care of our Suricata security by providing FIM, OS and audit Log Monitoring, and many others. Check <a class="reference external" href="https://documentation.wazuh.com/current/getting-started/components.html#wazuh-agent">Wazuh Agent</a> doc if you are not familiar with its capabilities.</p>
-<p>To install it please read and follow the <a class="reference external" href="https://documentation.wazuh.com/current/installation-guide/installing-wazuh-agent/index.html">install instructions</a> from Wazuh. Or request our help.</p>
-<blockquote>
-<div><ul class="simple">
-<li>email our support team - <a class="reference external" href="mailto:support&#37;&#52;&#48;owlh&#46;net">support<span>&#64;</span>owlh<span>&#46;</span>net</a></li>
-<li>visit our mailing list - <a class="reference external" href="https://groups.google.com/d/forum/owlh">OwlH mailing list</a> (<a class="reference external" href="mailto:owlh&#37;&#52;&#48;googlegroups&#46;com">owlh<span>&#64;</span>googlegroups<span>&#46;</span>com</a>)</li>
-</ul>
-</div></blockquote>
-</div>
-<div class="section" id="configure-wazuh-suricata-rules-to-create-right-alarms">
-<h2>Configure Wazuh Suricata rules to create right alarms<a class="headerlink" href="#configure-wazuh-suricata-rules-to-create-right-alarms" title="Permalink to this headline">¶</a></h2>
-<p>By default, Wazuh will use the JSON decoder to parse any JSON log entry from a wazuh agent. This decoder works really great, so we don’t need to care about parsing.</p>
-<p>To create an alert from collected logs, Wazuh uses rules. Each rule has an alert value so if the logs match with a rule and the rule’s alert value is equal or higher than alert level umbral defined in wazuh manager, then you will have an alert.</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="c1"># Default alert level configuration defined in manager ossec.conf file</span>
-<span class="o">&lt;</span><span class="n">alerts</span><span class="o">&gt;</span>
-  <span class="o">&lt;</span><span class="n">log_alert_level</span><span class="o">&gt;</span><span class="mi">3</span><span class="o">&lt;/</span><span class="n">log_alert_level</span><span class="o">&gt;</span>
-  <span class="o">&lt;</span><span class="n">email_alert_level</span><span class="o">&gt;</span><span class="mi">12</span><span class="o">&lt;/</span><span class="n">email_alert_level</span><span class="o">&gt;</span>
-<span class="o">&lt;/</span><span class="n">alerts</span><span class="o">&gt;</span>
-</pre></div>
-</div>
-<p>So, by default, most Suricata rules will have a 0 value level to prevent noisy events. we suggest to modify this values just to be sure that everything is collected, you can then adjust the alert level as needed in the future, as well as you can modify rules also as you may need.</p>
-<p>If you are not familiar with decoders and rules, this may help - <a class="reference external" href="https://documentation.wazuh.com/current/user-manual/ruleset/index.html#ruleset">Wazuh decoders and rules</a>.</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="c1"># Sample rule modified to create an alert</span>
-<span class="o">&lt;</span><span class="n">rule</span> <span class="nb">id</span><span class="o">=</span><span class="s2">&quot;86600&quot;</span> <span class="n">level</span><span class="o">=</span><span class="s2">&quot;4&quot;</span><span class="o">&gt;</span>
-  <span class="o">&lt;</span><span class="n">decoded_as</span><span class="o">&gt;</span><span class="n">json</span><span class="o">&lt;/</span><span class="n">decoded_as</span><span class="o">&gt;</span>
-  <span class="o">&lt;</span><span class="n">field</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;timestamp&quot;</span><span class="o">&gt;</span>\<span class="o">.+&lt;/</span><span class="n">field</span><span class="o">&gt;</span>
-  <span class="o">&lt;</span><span class="n">field</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;event_type&quot;</span><span class="o">&gt;</span>\<span class="o">.+&lt;/</span><span class="n">field</span><span class="o">&gt;</span>
-  <span class="o">&lt;</span><span class="n">description</span><span class="o">&gt;</span><span class="n">Suricata</span> <span class="n">messages</span><span class="o">.&lt;/</span><span class="n">description</span><span class="o">&gt;</span>
-<span class="o">&lt;/</span><span class="n">rule</span><span class="o">&gt;</span>
-</pre></div>
-</div>
-<p><strong>Remember</strong> to restart your Wazuh Manager service after any change in your configuration file and check your Wazuh Manager logs.</p>
-</div>
-<div class="section" id="configure-wazuh-agent-to-read-the-eve-json-output-file">
-<h2>Configure Wazuh Agent to read the eve.json output file<a class="headerlink" href="#configure-wazuh-agent-to-read-the-eve-json-output-file" title="Permalink to this headline">¶</a></h2>
-<p>We need to tell our Wazuh Agent to read the Suricata output file. This will be done in the ossec.conf file under /var/ossec/etc folder (Linux systems). Check your &lt;ossec_config&gt; tag and include following lines.</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="c1"># Modify ossec.conf - read localfile suricata EVE json log</span>
-<span class="o">&lt;</span><span class="n">localfile</span><span class="o">&gt;</span>
-  <span class="o">&lt;</span><span class="n">log_format</span><span class="o">&gt;</span><span class="n">syslog</span><span class="o">&lt;/</span><span class="n">log_format</span><span class="o">&gt;</span>
-  <span class="o">&lt;</span><span class="n">location</span><span class="o">&gt;/</span><span class="n">var</span><span class="o">/</span><span class="n">log</span><span class="o">/</span><span class="n">suricata</span><span class="o">/</span><span class="n">eve</span><span class="o">.</span><span class="n">json</span><span class="o">&lt;/</span><span class="n">location</span><span class="o">&gt;</span>
-<span class="o">&lt;/</span><span class="n">localfile</span><span class="o">&gt;</span>
-</pre></div>
-</div>
-<p><strong>Remember</strong> to restart your Wazuh Agent service after any change in your configuration file and check your Wazuh Agent logs.</p>
-</div>
-<div class="section" id="if-you-require-pci-configure-owlh-pci-mapping">
-<h2>If you require PCI. Configure OwlH PCI mapping<a class="headerlink" href="#if-you-require-pci-configure-owlh-pci-mapping" title="Permalink to this headline">¶</a></h2>
-<p>This must be run on every Wazuh logstash server and it will:</p>
-<ul class="simple">
-<li>Modify logstash configuration file to include OwlH PCI-DSS 3.2 mapping schema</li>
-<li>Copy OwlH suricata PCI-DSS mapping to config folder</li>
-<li>Restart logstash</li>
-</ul>
-<p>Please, download configuration script</p>
-<blockquote>
-<div><code class="docutils literal"><span class="pre">$</span> <span class="pre">curl</span> <span class="pre">-so</span> <span class="pre">/tmp/owlhconfig.sh</span> <span class="pre">https://raw.githubusercontent.com/owlh/wazuhenrichment/master/owlhconfig.sh</span></code></div></blockquote>
-<p>and then run it</p>
-<blockquote>
-<div><code class="docutils literal"><span class="pre">$</span> <span class="pre">sudo</span> <span class="pre">bash</span> <span class="pre">/tmp/owlhconfig.sh</span></code></div></blockquote>
-<p>Please, let us know if you need help.</p>
-<blockquote>
-<div><ul class="simple">
-<li>email our support team - <a class="reference external" href="mailto:support&#37;&#52;&#48;owlh&#46;net">support<span>&#64;</span>owlh<span>&#46;</span>net</a></li>
-<li>visit our mailing list - <a class="reference external" href="https://groups.google.com/d/forum/owlh">OwlH mailing list</a> (<a class="reference external" href="mailto:owlh&#37;&#52;&#48;googlegroups&#46;com">owlh<span>&#64;</span>googlegroups<span>&#46;</span>com</a>)</li>
-</ul>
-</div></blockquote>
-</div>
-<div class="section" id="modify-ip-data-mapping">
-<h2>Modify IP data mapping<a class="headerlink" href="#modify-ip-data-mapping" title="Permalink to this headline">¶</a></h2>
-<p>Suricata json format includes fields like src_ip, src_port, dest_ip and dest_port. but wazuh elastic index is using srcip, srcport, dstip and dstport.</p>
-<p>so we will do the mapping modification in logstash by including the following in the wazuh logstash filter.</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="nb">filter</span> <span class="p">{</span>
-    <span class="k">if</span> <span class="p">[</span><span class="n">data</span><span class="p">][</span><span class="n">src_ip</span><span class="p">]</span> <span class="p">{</span>
-        <span class="n">mutate</span><span class="p">{</span>
-            <span class="n">add_field</span> <span class="o">=&gt;</span> <span class="p">[</span> <span class="s2">&quot;[data][srcip]&quot;</span><span class="p">,</span><span class="s2">&quot;%{[data][src_ip]}&quot;</span><span class="p">]</span>
-            <span class="n">remove_field</span> <span class="o">=&gt;</span> <span class="p">[</span> <span class="s2">&quot;[data][src_ip]&quot;</span> <span class="p">]</span>
-        <span class="p">}</span>
-    <span class="p">}</span>
-    <span class="k">if</span> <span class="p">[</span><span class="n">data</span><span class="p">][</span><span class="n">dest_ip</span><span class="p">]</span> <span class="p">{</span>
-        <span class="n">mutate</span><span class="p">{</span>
-            <span class="n">add_field</span> <span class="o">=&gt;</span> <span class="p">[</span> <span class="s2">&quot;[data][dstip]&quot;</span><span class="p">,</span><span class="s2">&quot;%{[data][dest_ip]}&quot;</span><span class="p">]</span>
-            <span class="n">remove_field</span> <span class="o">=&gt;</span> <span class="p">[</span> <span class="s2">&quot;[data][dest_ip]&quot;</span> <span class="p">]</span>
-        <span class="p">}</span>
-    <span class="p">}</span>
-    <span class="k">if</span> <span class="p">[</span><span class="n">data</span><span class="p">][</span><span class="n">dest_port</span><span class="p">]</span> <span class="p">{</span>
-        <span class="n">mutate</span><span class="p">{</span>
-            <span class="n">add_field</span> <span class="o">=&gt;</span> <span class="p">[</span> <span class="s2">&quot;[data][dstport]&quot;</span><span class="p">,</span><span class="s2">&quot;%{[data][dest_port]}&quot;</span><span class="p">]</span>
-            <span class="n">remove_field</span> <span class="o">=&gt;</span> <span class="p">[</span> <span class="s2">&quot;[data][dest_port]&quot;</span> <span class="p">]</span>
-        <span class="p">}</span>
-    <span class="p">}</span>
-    <span class="k">if</span> <span class="p">[</span><span class="n">data</span><span class="p">][</span><span class="n">src_port</span><span class="p">]</span> <span class="p">{</span>
-        <span class="n">mutate</span><span class="p">{</span>
-            <span class="n">add_field</span> <span class="o">=&gt;</span> <span class="p">[</span> <span class="s2">&quot;[data][srcport]&quot;</span><span class="p">,</span><span class="s2">&quot;%{[data][src_port]}&quot;</span><span class="p">]</span>
-            <span class="n">remove_field</span> <span class="o">=&gt;</span> <span class="p">[</span> <span class="s2">&quot;[data][src_port]&quot;</span> <span class="p">]</span>
-        <span class="p">}</span>
-    <span class="p">}</span>
-<span class="p">}</span>
-</pre></div>
-</div>
-</div>
-<div class="section" id="modify-elastic-template">
-<h2>Modify Elastic template<a class="headerlink" href="#modify-elastic-template" title="Permalink to this headline">¶</a></h2>
-<p>Elasticsearch Wazuh index template is based on agent fields and doesn’t include all the new fields types that Suricata will provide. This is not a real problem as an index refresh into kibana will allow you to manage Suricata without a problem. But some useful things may happen if we use the right field type as for example an amazing flow dashboard with useful traffic graphics.</p>
-<p>These are some fields that will require template customization.</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="s2">&quot;flow&quot;</span><span class="p">:</span> <span class="p">{</span>
-  <span class="s2">&quot;properties&quot;</span><span class="p">:</span> <span class="p">{</span>
-    <span class="s2">&quot;bytes_toclient&quot;</span> <span class="p">:</span> <span class="p">{</span>
-      <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;long&quot;</span><span class="p">,</span>
-      <span class="s2">&quot;doc_values&quot;</span><span class="p">:</span> <span class="s2">&quot;true&quot;</span>
-    <span class="p">},</span>
-    <span class="s2">&quot;bytes_toserver&quot;</span><span class="p">:</span> <span class="p">{</span>
-      <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;long&quot;</span><span class="p">,</span>
-      <span class="s2">&quot;doc_values&quot;</span><span class="p">:</span> <span class="s2">&quot;true&quot;</span>
-    <span class="p">}</span>
-  <span class="p">}</span>
-<span class="p">},</span>
-</pre></div>
-</div>
-<div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last">As there can be some issues when modifying elasticsearch indices and templates, please request our help to do it. We are working to prepare a full index template and instructions.</p>
-</div>
-<div class="section" id="if-you-need-help">
-<h3>If you need help:<a class="headerlink" href="#if-you-need-help" title="Permalink to this headline">¶</a></h3>
-<ul class="simple">
-<li>email our support team - <a class="reference external" href="mailto:support&#37;&#52;&#48;owlh&#46;net">support<span>&#64;</span>owlh<span>&#46;</span>net</a></li>
-<li>visit our mailing list - <a class="reference external" href="https://groups.google.com/d/forum/owlh">OwlH mailing list</a> (<a class="reference external" href="mailto:owlh&#37;&#52;&#48;googlegroups&#46;com">owlh<span>&#64;</span>googlegroups<span>&#46;</span>com</a>)</li>
-</ul>
-<p><strong>OwlH - current v0.10.x - Oct</strong> - <a class="reference external" href="https://github.com/OwlH-net/roadmap/blob/master/README.md">OwlH Changelog</a></p>
-<p>documentation last updated - Nov 01, 2019</p>
 </div>
 </div>
 </div>
@@ -531,21 +334,12 @@
           </div>
           <footer>
   
-    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-      
-        <a href="OwlHBro.html" class="btn btn-neutral float-right" title="OwlH - Zeek and Wazuh" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
-      
-      
-        <a href="OwlHForensics.html" class="btn btn-neutral" title="OwlH Forensics with Moloch configuration" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
-      
-    </div>
-  
 
   <hr/>
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 2018, owlh team.
+        &copy; Copyright 2020, owlh team.
 
     </p>
   </div>
@@ -567,7 +361,7 @@
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'../',
-            VERSION:'0.4 - Cloud and Bro',
+            VERSION:'0.17.x',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  true,
