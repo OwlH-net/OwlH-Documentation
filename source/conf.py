@@ -36,7 +36,8 @@ from sphinx.util import compat
 compat.make_admonition = BaseAdmonition
 
 extensions = [
-    'sphinx.ext.githubpages'
+    'sphinx.ext.githubpages',
+    'sphinx_tabs.tabs'
 #    'sphinxcontrib.images'
 ]
 
