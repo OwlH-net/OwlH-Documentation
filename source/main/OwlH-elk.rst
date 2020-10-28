@@ -1,6 +1,6 @@
 
-Sync with ELK 7.x
-=================
+Sync with ELK 7.x using Wazuh
+=============================
 
 .. warning::
 

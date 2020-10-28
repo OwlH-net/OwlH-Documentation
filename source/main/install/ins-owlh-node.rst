@@ -7,6 +7,7 @@ install owlh node
     - install suricata
     - install zeek 
     - install wazuh
+    - connect OwlH to ELK
     - install owlh interface
     - install software tap related packets
     - configure your firewall
