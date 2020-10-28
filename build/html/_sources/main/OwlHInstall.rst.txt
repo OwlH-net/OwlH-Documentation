@@ -37,6 +37,7 @@ Visualization
 -------------
 
       * :doc:`OwlH dashboards integration Wazuh-ELK</main/OwlH-elk>`
+      * :doc:`OwlH dashboards integration ELK</main/OwlH-node-elk>`
 
 Appendices
 ----------

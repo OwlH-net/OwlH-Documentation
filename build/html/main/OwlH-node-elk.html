@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Sync with ELK 7.x using Wazuh &mdash; owlh 0.17.x documentation</title>
+  <title>Sync with ELK 7.x &mdash; owlh 0.17.x documentation</title>
   
 
   
@@ -250,13 +250,13 @@
     
       <li><a href="../index.html">Docs</a> &raquo;</li>
         
-      <li>Sync with ELK 7.x using Wazuh</li>
+      <li>Sync with ELK 7.x</li>
     
     
       <li class="wy-breadcrumbs-aside">
         
             
-            <a href="../_sources/main/OwlH-elk.rst.txt" rel="nofollow"> View page source</a>
+            <a href="../_sources/main/OwlH-node-elk.rst.txt" rel="nofollow"> View page source</a>
           
         
       </li>
@@ -269,8 +269,8 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="sync-with-elk-7-x-using-wazuh">
-<h1>Sync with ELK 7.x using Wazuh<a class="headerlink" href="#sync-with-elk-7-x-using-wazuh" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="sync-with-elk-7-x">
+<h1>Sync with ELK 7.x<a class="headerlink" href="#sync-with-elk-7-x" title="Permalink to this headline">¶</a></h1>
 <div class="admonition warning">
 <p class="first admonition-title">Warning</p>
 <p class="last">Be sure you are running ELK (elasticsearch, filebeat and kibana) with version &gt;7.3.2</p>
@@ -281,67 +281,68 @@
 <li>join OwlH slack - <a class="reference external" href="https://join.slack.com/t/owlh/shared_invite/enQtNjE2NTEwODUzNTExLTJlNTdlMDRiMzM0ZTVhNWQ0YWE4YzgyYWQ4ZGYyMDQzMzM5NDA1M2I3NDlhYTFkNjdhZTk0MzFjMGU3ZWI3ZDM">OwlH Slack workspace</a></li>
 <li>ask for professional support and services - <a class="reference external" href="mailto:prohelp&#37;&#52;&#48;owlh&#46;net">prohelp<span>&#64;</span>owlh<span>&#46;</span>net</a></li>
 </ul>
-<p>We will need to modify a bit the Wazuh’s default filebeat configuration, we will do:</p>
+<p>This process will allow you to connect your OwlH environment directly to ELK.</p>
+<p>You will do:</p>
 <blockquote>
 <div><ul class="simple">
+<li>install filebeat on OwlH Nodes</li>
+<li>install OwlH-Filebeat module</li>
 <li>import OwlH-Kibana objects in Kibana</li>
 <li>load OwlH template in Elasticsearch</li>
-<li>install OwlH-Filebeat module</li>
-<li>modify Wazuh’s module to exclude OwlH Lines</li>
 <li>modify Filebeat main configuration to include OwlH module</li>
 </ul>
 </div></blockquote>
-<div class="admonition attention">
-<p class="first admonition-title">Attention</p>
-<p class="last">You must have access to your Wazuh’s manager shell console where Filebeat is installed and to Kibana’s console</p>
-</div>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
 <p class="last">Please, check URLs and paths to ensure you use the right commands and that you adapt command lines as needed.</p>
 </div>
-<div class="section" id="download-files-and-prepare">
-<h2>Download files and prepare<a class="headerlink" href="#download-files-and-prepare" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="install-filebeat-in-your-owlh-nodes">
+<h2>Install Filebeat in your OwlH Nodes<a class="headerlink" href="#install-filebeat-in-your-owlh-nodes" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic">
+<li><p class="first">Import the GPG key:</p>
+<blockquote>
+<div><div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">#</span> rpm --import https://artifacts.elastic.co/GPG-KEY-elasticsearch
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+<li><p class="first">Add the repository:</p>
+<blockquote>
+<div><div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">#</span> cat &gt; /etc/yum.repos.d/elastic.repo &lt;&lt; EOF
+<span class="go">[elasticsearch-7.x]</span>
+<span class="go">name=Elasticsearch repository for 7.x packages</span>
+<span class="go">baseurl=https://artifacts.elastic.co/packages/7.x/yum</span>
+<span class="go">gpgcheck=1</span>
+<span class="go">gpgkey=https://artifacts.elastic.co/GPG-KEY-elasticsearch</span>
+<span class="go">enabled=1</span>
+<span class="go">autorefresh=1</span>
+<span class="go">type=rpm-md</span>
+<span class="go">EOF</span>
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+<li><p class="first">Install Filebeat</p>
+<blockquote>
+<div><div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">#</span> yum install filebeat
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+</ol>
+</div>
+<div class="section" id="download-and-configure">
+<h2>Download and configure<a class="headerlink" href="#download-and-configure" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="c1"># cd /tmp</span>
 <span class="c1"># mkdir /tmp/owlhfilebeat</span>
-<span class="c1"># wget repo.owlh.net/elastic/owlh-filebeat-7.4-files.tar.gz</span>
-<span class="c1"># tar -C /tmp/owlhfilebeat -xf owlh-filebeat-7.4-files.tar.gz</span>
+<span class="c1"># cd /tmp/owlhfilebeat</span>
+<span class="c1"># wget repo.owlh.net/fbit/owlh-module.tar.gz</span>
+<span class="c1"># tar -C /tmp/owlhfilebeat -xf owlh-module.tar.gz</span>
 </pre></div>
-</div>
-<div class="section" id="import-owlh-kibana-dashboards-and-objects-in-kibana">
-<h3>Import OwlH kibana dashboards and objects in Kibana<a class="headerlink" href="#import-owlh-kibana-dashboards-and-objects-in-kibana" title="Permalink to this headline">¶</a></h3>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="c1"># curl -X POST &quot;localhost:5601/api/saved_objects/_import&quot; -H &quot;kbn-xsrf: true&quot; --form file=@/tmp/owlhfilebeat/owlh-kibana-objects-20191030.ndjson</span>
-</pre></div>
-</div>
-</div>
-<div class="section" id="install-owlh-template">
-<h3>Install OwlH template<a class="headerlink" href="#install-owlh-template" title="Permalink to this headline">¶</a></h3>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="c1"># curl -XPUT -H &#39;Content-Type: application/json&#39; &#39;http://localhost:9200/_template/owlh&#39; -d@/tmp/owlhfilebeat/owlh-template.json</span>
-</pre></div>
-</div>
 </div>
 <div class="section" id="install-owlh-module">
 <h3>Install OwlH module<a class="headerlink" href="#install-owlh-module" title="Permalink to this headline">¶</a></h3>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="c1"># tar -C /usr/share/filebeat/module/ -xf /tmp/owlhfilebeat/owlh-filebeat-7.4-module.tar.gz</span>
-</pre></div>
-</div>
-</div>
-<div class="section" id="modify-wazuh-module">
-<h3>Modify Wazuh Module<a class="headerlink" href="#modify-wazuh-module" title="Permalink to this headline">¶</a></h3>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="c1"># vi /usr/share/filebeat/module/wazuh/alerts/config/alerts.yml</span>
-</pre></div>
-</div>
-<div class="admonition attention">
-<p class="first admonition-title">Attention</p>
-<p class="last">be sure your file looks like this</p>
-</div>
-<div class="highlight-default"><div class="highlight"><pre><span></span>fields:
-  index_prefix: {{ .index_prefix }}
-type: log
-paths:
-{{ range $i, $path := .paths }}
- - {{$path}}
-{{ end }}
-exclude_lines: [&quot;bro_engine&quot;]
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="c1"># tar -C /usr/share/filebeat/module/ -xf /tmp/owlhfilebeat/owlh-filebeat-7.9.x.tar.gz</span>
 </pre></div>
 </div>
 </div>
@@ -350,33 +351,12 @@ exclude_lines: [&quot;bro_engine&quot;]
 <h2>Modify filebeat<a class="headerlink" href="#modify-filebeat" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="modify-filebeat-configuration">
 <h3>Modify Filebeat configuration<a class="headerlink" href="#modify-filebeat-configuration" title="Permalink to this headline">¶</a></h3>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="c1"># vi /etc/filebeat/filebeat.yml</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="c1"># cp /tmp/owlhfilebeat/filebeat.yml /etc/filebeat/filebeat.yml</span>
 </pre></div>
 </div>
 <div class="admonition attention">
 <p class="first admonition-title">Attention</p>
-<p class="last">be sure your file looks like this</p>
-</div>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="c1"># Wazuh - Filebeat configuration file</span>
-<span class="n">filebeat</span><span class="o">.</span><span class="n">modules</span><span class="p">:</span>
-  <span class="o">-</span> <span class="n">module</span><span class="p">:</span> <span class="n">wazuh</span>
-    <span class="n">alerts</span><span class="p">:</span>
-      <span class="n">enabled</span><span class="p">:</span> <span class="n">true</span>
-    <span class="n">archives</span><span class="p">:</span>
-      <span class="n">enabled</span><span class="p">:</span> <span class="n">false</span>
-<span class="c1"># OwlH Module</span>
-  <span class="o">-</span> <span class="n">module</span><span class="p">:</span> <span class="n">owlh</span>
-    <span class="n">events</span><span class="p">:</span>
-      <span class="n">enabled</span><span class="p">:</span> <span class="n">true</span>
-
-<span class="n">setup</span><span class="o">.</span><span class="n">template</span><span class="o">.</span><span class="n">json</span><span class="o">.</span><span class="n">enabled</span><span class="p">:</span> <span class="n">true</span>
-<span class="n">setup</span><span class="o">.</span><span class="n">template</span><span class="o">.</span><span class="n">json</span><span class="o">.</span><span class="n">path</span><span class="p">:</span> <span class="s1">&#39;/etc/filebeat/wazuh-template.json&#39;</span>
-<span class="n">setup</span><span class="o">.</span><span class="n">template</span><span class="o">.</span><span class="n">json</span><span class="o">.</span><span class="n">name</span><span class="p">:</span> <span class="s1">&#39;wazuh&#39;</span>
-<span class="n">setup</span><span class="o">.</span><span class="n">template</span><span class="o">.</span><span class="n">overwrite</span><span class="p">:</span> <span class="n">true</span>
-<span class="n">setup</span><span class="o">.</span><span class="n">ilm</span><span class="o">.</span><span class="n">enabled</span><span class="p">:</span> <span class="n">false</span>
-<span class="c1">## OwlH pipeline sync</span>
-<span class="n">filebeat</span><span class="o">.</span><span class="n">overwrite_pipelines</span><span class="p">:</span> <span class="n">true</span>
-</pre></div>
+<p class="last">be sure to update properly your filebeat.yml file to point to your elasticsearch server.</p>
 </div>
 </div>
 <div class="section" id="restart-filebeat">
@@ -390,7 +370,7 @@ exclude_lines: [&quot;bro_engine&quot;]
 
 <span class="c1"># journalctl -f -u filebeat</span>
 
-<span class="n">From</span> <span class="n">your</span> <span class="n">web</span> <span class="n">browser</span><span class="p">,</span> <span class="n">check</span> <span class="n">kibana</span><span class="o">-&gt;</span><span class="n">dashboards</span>
+<span class="n">From</span> <span class="n">your</span> <span class="n">web</span> <span class="n">browser</span><span class="p">,</span> <span class="n">check</span> <span class="n">kibana</span><span class="o">-&gt;</span><span class="n">discovery</span> <span class="k">for</span> <span class="n">owlh</span> <span class="n">indices</span><span class="o">.</span>
 </pre></div>
 </div>
 </div>
