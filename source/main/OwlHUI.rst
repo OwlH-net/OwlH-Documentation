@@ -4,6 +4,11 @@ OwlH UI (user interface)
 
 .. image:: /img/UI-nodes-main.png
 
+
+Install it 
+----------
+      * :doc:`Install OwlH</main/OwlHInstall>` 
+
 User Interface - top menu
 -------------------------
 
