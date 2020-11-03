@@ -99,6 +99,38 @@ Use these scripts to deploy Suricata and Zeek in your OwlH Node. Change current-
 Scripts will use source files to install Suricata and Zeek. After installation is done, you will need to configure both on UI.
 
 
+
+If you plan to use Software TAP on your OwlH Node
+`````````````````````````````````````````````````
+
+  - install owlh interface using script
+
+:OwlH Insterface: wget repo.owlh.net/current-debian/services/owlhinterface.sh
+
+  - If you are using Suricata, modify your suricata.yaml file to include af-packet owlh interface config:
+
+    .. code-block:: console
+
+      - interface: owlh
+        #threads: auto
+        cluster-id: 98
+        cluster-type: cluster_flow
+        defrag: yes
+        #rollover: yes
+        #use-mmap: yes
+        #mmap-locked: yes
+        tpacket-v3: yes
+        ring-size: 2048
+        block-size: 409600
+        #block-timeout: 10
+        #use-emergency-flush: yes
+        #checksum-checks: kernel
+        #bpf-filter: port 80 or udp
+        #copy-mode: ips
+        #copy-iface: eth1
+
+
+
 Register your new node in your OwlH Master
 ``````````````````````````````````````````
 
