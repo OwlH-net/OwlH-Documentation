@@ -103,12 +103,12 @@ Scripts will use source files to install Suricata and Zeek. After installation i
 If you plan to use Software TAP on your OwlH Node
 `````````````````````````````````````````````````
 
-  - **Install owlh interface**
+- **Install owlh interface**
 
 :OwlH Insterface: wget repo.owlh.net/current-debian/services/owlhinterface.sh
 
 
-  - **Suricata and owlh interface** If you are using Suricata, modify your suricata.yaml file to include af-packet owlh interface config:
+- **Suricata and owlh interface** If you are using Suricata, modify your suricata.yaml file to include af-packet owlh interface config:
 
     .. code-block:: console
 
