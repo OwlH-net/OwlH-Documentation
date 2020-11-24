@@ -31,7 +31,7 @@ Install Wazuh Agent
   .. group-tab:: APT
 
 
-    .. include:: OwlHWazuhAgentDebian
+    .. include:: /main/OwlHWazuhAgentDebian.rst
 
     
 Register your Wazuh Agent with your Wazuh Manager, and modify the ossec.conf file to point to it as needed. Please follow your Wazuh deployment process to run this step or refer to Wazuh's documentation.
