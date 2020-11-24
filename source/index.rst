@@ -1,38 +1,23 @@
 OwlH Documentation home
 =======================
 
-About OwlH
-==========
+.. toctree::
+    :maxdepth: 1
 
-    v0.17.x
+    main/OwlHInstall
+    main/OwlHScenarios
+    main/OwlHUM
+
+About OwlH
+----------
+
+    Current - v0.17.x
+
 
 This picture will summarize the process we are working in.
 
 .. image:: /img/owlhprocess.png
 
-.. toctree::
-    :maxdepth: 4
-
-    main/OwlHGS
-    main/OwlHInstall
-    main/OwlHUpdate
-    main/OwlHUM
-    main/OwlHTroubleshooting
-    main/lookingfor
-    main/scenarios
-
-
-
-
-
-CHANGELOG
----------
-
-As per our latest version, in OwlH solution you may find: 
-
-.. _OwlH Changelog: https://github.com/OwlH-net/roadmap/blob/master/README.md
-
-**OwlH - current v0.17.x** - `OwlH Changelog`_
 
 .. toctree::
     :maxdepth: 1

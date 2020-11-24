@@ -54,9 +54,9 @@ source_suffix = '.rst'
 master_doc = 'index'
 
 # General information about the project.
-project = u'owlh'
-copyright = u'2020, owlh team'
-author = u'owlh team'
+project = u'OwlH Net'
+copyright = u'2020, OwlH team'
+author = u'OwlH team'
 
 # The version info for the project you're documenting, acts as replacement for
 # |version| and |release|, also used in various other places throughout the
