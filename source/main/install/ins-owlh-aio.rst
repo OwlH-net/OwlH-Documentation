@@ -35,7 +35,7 @@ Verify OwlH Installer configuration:
 
 Verify your owlhinstaller configuration file for repository, action and targets.
 
-configuration file: ``/tmp/owlhinstaller/config.json``
+configuration file: ``/tmp/owlhinstaller/config.json`
 
 .. code-block:: console
    
