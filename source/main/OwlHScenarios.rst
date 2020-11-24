@@ -12,19 +12,43 @@ components:
 configure owlh node
 -------------------
 
-* verify owlh interface is set 
+* Verify owlh interface is set 
 
 .. code-block:: console
 
-  3: owlh: <BROADCAST,NOARP,UP,LOWER_UP> mtu 65535 qdisc noqueue state UNKNOWN group default qlen 1000
-    link/ether 2a:a3:de:a0:fd:76 brd ff:ff:ff:ff:ff:ff
-    inet6 fe80::28a3:deff:fea0:fd76/64 scope link
-       valid_lft forever preferred_lft forever
+  # ip a
+    ...
+    3: owlh: <BROADCAST,NOARP,UP,LOWER_UP> mtu 65535 qdisc noqueue state UNKNOWN group default qlen 1000
+        link/ether 2a:a3:de:a0:fd:76 brd ff:ff:ff:ff:ff:ff
+        inet6 fe80::28a3:deff:fea0:fd76/64 scope link
+           valid_lft forever preferred_lft forever
 
 
 * Suricata and Zeek must be configured to listen to owlh interface
+
+Check from your UI, your node configuration for Suricata and Zeek, both must be listening to owlh interface.
+
 * Configure software TAP server from UI 
+
+:: from UI
+    - From nodes -> node services configuration -> Software TAP
+    - Create a Socket to Network STAP server 
+    - Set a Name
+    - Select the interface owlh from interface list 
+    - let default Cert file
+    - let default port (50010)
+    - let default bpf filter 
+
+save
+
 * Start software TAP server from UI 
+
+Just click Start and check that STAP server is on and running. Keep this screen open as we will see here the clients that are connected to the new STAP server.
+
+.. note::
+
+  more than one STAP server can be configured, you only need to set a different port where new server will be listening.
+
 
 prepare your instances 
 ----------------------
@@ -45,7 +69,7 @@ This OwlH client is useful when you are running OwlH in any Software TAP configu
 
 .. Attention::
 
-    **For Windows users**
+    **Windows users**
 
     You can manage your STAP client configuration running following command
 
@@ -60,8 +84,7 @@ This OwlH client is useful when you are running OwlH in any Software TAP configu
     * Socat (installed with Cygwin) 
 
 
-Download and Install 
---------------------
+* Download and Install 
 
 .. code-block:: console
 
