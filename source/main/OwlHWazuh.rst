@@ -5,13 +5,10 @@ if you want to send OwlH output including Suricata and Zeek alerts and logs to W
 
 This will help to integrate your NIDS alerts and output into Wazuh world. this is a one-way integration process.
 
-.. include:: keepincontact.rst
-
 Main steps
 ^^^^^^^^^^
 
 * Install and register your Wazuh Agent in the OwlH Node
-* Configure Wazuh Agent to read the OwlH Node output
 * Enable OwlH Node Analyzer
 * Add OwlH filebeat Module in your OwlH Manager
 * Import OwlH dashboards in your ELK Kibana
@@ -22,13 +19,21 @@ Main steps
 Install Wazuh Agent
 -------------------
 
-Run OwlH wazuh agent script to install Wazuh-agent in your OwlH Node.
+.. tabs::
 
-::
 
-  # wget repo.owlh.net/current-centos/services/owlhwazuh.sh
-  # bash owlhwazuh.sh
+  .. group-tab:: Yum
 
+
+    .. include:: OwlHWazuhAgentCentos
+
+
+  .. group-tab:: APT
+
+
+    .. include:: OwlHWazuhAgentDebian
+
+    
 Register your Wazuh Agent with your Wazuh Manager, and modify the ossec.conf file to point to it as needed. Please follow your Wazuh deployment process to run this step or refer to Wazuh's documentation.
 
 
