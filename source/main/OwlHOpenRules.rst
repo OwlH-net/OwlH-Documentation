@@ -22,6 +22,14 @@ Ruleset Management
 **Management process**
 
  #. configure ruleset sources.
- #. configure local ruleset.
+ #. configure local ruleset using sources.
  #. assign ruleset to Suricata services
  #. sync.
+
+**Ruleset Maintenance process**
+
+ #. set scheduler to update your source ruleset with latest updates.
+ #. decide if you want to overwrite your local ruleset with any new update or if you prefer to just include the new rules included.
+ #. send the updated ruleset to your Suricata systems and reload it.
+
+ All this maintenance process is defined in local ruleset with the schedule configuration.
