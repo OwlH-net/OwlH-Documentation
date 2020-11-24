@@ -163,27 +163,52 @@ If you plan to use Software TAP configuration, you should prepare your owlh loca
 
 Also, if using suricata and Software TAP you will need to add this interface details to af-packet: key
 
+Edit /etc/suricata/suricata.yaml and add: 
+
 .. code-block:: console
 
   af-packet:
-  - interface: owlh
-    #threads: auto
-    cluster-id: 98
-    cluster-type: cluster_flow
-    defrag: yes
-    #rollover: yes
-    #use-mmap: yes
-    #mmap-locked: yes
-    tpacket-v3: yes
-    ring-size: 2048
-    block-size: 409600
-    #block-timeout: 10
-    #use-emergency-flush: yes
-    #checksum-checks: kernel
-    #bpf-filter: port 80 or udp
-    #copy-mode: ips
-    #copy-iface: eth1
+    - interface: owlh
+      #threads: auto
+      cluster-id: 98
+      cluster-type: cluster_flow
+      defrag: yes
+      #rollover: yes
+      #use-mmap: yes
+      #mmap-locked: yes
+      tpacket-v3: yes
+      ring-size: 2048
+      block-size: 409600
+      #block-timeout: 10
+      #use-emergency-flush: yes
+      #checksum-checks: kernel
+      #bpf-filter: port 80 or udp
+      #copy-mode: ips
+      #copy-iface: eth1
+
 
 
 Verify everything is properly set
+---------------------------------
 
+
+.. code-block:: console
+
+  # netstat -nputa 
+
+should provide an output like this:
+
+.. code-block:: console
+
+  # netstat -nputa 
+    [root@ip-172-31-41-217 ec2-user]# netstat -nputa
+    Active Internet connections (servers and established)
+    Proto Recv-Q Send-Q Local Address           Foreign Address         State       PID/Program name
+    tcp6       0      0 :::443                  :::*                    LISTEN      2570/httpd
+    ... 
+    tcp6       0      0 :::50001                :::*                    LISTEN      2451/owlhmaster
+    ...
+    tcp6       0      0 :::50002                :::*                    LISTEN      9936/owlhnode
+
+
+Now you should be able to access your master with your browser. 
