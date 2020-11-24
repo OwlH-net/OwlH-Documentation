@@ -141,12 +141,11 @@ Install Zeek
 Install OwlH Interface
 ----------------------
 
-If you plan to use STAP 
+If you plan to use Software TAP configuration, you should prepare your owlh local interface
 
-
-
-
-.. danger::
-
-   Please, be careful using following steps.
+.. code-block:: console
+   
+   # cd /tmp/
+   # wget repo.owlh.net/current-centos/services/owlhinterface.sh
+   # bash owlhinterface.sh
 
