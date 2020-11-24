@@ -1,10 +1,15 @@
-Software TAP Scenario
-=====================
+Software TAP 
+============
+
+Transport traffic from remote instances to a central OwlH Node or OwlH Master. Traffic will be analyzed on OwlH Node by Suricata, Zeek and OwlH Analyzer, or will be dispatched between multiple OwlH Nodes by OwlH Master.
+
+This scenario is valid on Cloud environments as well as any site without SPAN or MIRROR port availability
 
 components:
 
-  * owlh node - should be installed and ready
-  * owlh client - will be installed on any server you want to collect traffic from.
+  * :owlh node: - should be installed and ready 
+    * check :doc:`install OwlH Node </main/install/ins-owlh-aio>`
+  * :owlh client: - will be installed on any server you want to collect traffic from.
 
 configure owlh node
 -------------------
