@@ -16,8 +16,6 @@ This picture will summarize the process we are working in.
     main/OwlHInstall
     main/OwlHScenarios
 
-
-
 .. toctree::
     :maxdepth: 1
 
