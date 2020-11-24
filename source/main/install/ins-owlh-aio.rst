@@ -118,19 +118,31 @@ you must install httpd/apache and the owlh site configuration file.
    
    # cd /tmp/
    # wget repo.owlh.net/current-centos/services/owlhui-httpd.sh
-   # bash owlhui-httpd.sh
+   # bash owlhui-httpd.sh 1.1.1.1
 
+where: 
+
+   :1.1.1.1: is your master ip. 
+
+you can edit your master ip on file /var/www/owlh/conf/ui.conf
 
 Install suricata
 ----------------
+
+If you want to use Suricata. You will configure Suricata from UI mostly
+
 .. code-block:: console
    
    # cd /tmp/
    # wget repo.owlh.net/current-centos/services/owlhsuricata.sh
    # bash owlhsuricata.sh
 
+
 Install Zeek
 ------------
+
+This step can take a long while, consider running it under a screen session.
+
 .. code-block:: console
    
    # cd /tmp/
@@ -148,4 +160,30 @@ If you plan to use Software TAP configuration, you should prepare your owlh loca
    # cd /tmp/
    # wget repo.owlh.net/current-centos/services/owlhinterface.sh
    # bash owlhinterface.sh
+
+Also, if using suricata and Software TAP you will need to add this interface details to af-packet: key
+
+.. code-block:: console
+
+  af-packet:
+  - interface: owlh
+    #threads: auto
+    cluster-id: 98
+    cluster-type: cluster_flow
+    defrag: yes
+    #rollover: yes
+    #use-mmap: yes
+    #mmap-locked: yes
+    tpacket-v3: yes
+    ring-size: 2048
+    block-size: 409600
+    #block-timeout: 10
+    #use-emergency-flush: yes
+    #checksum-checks: kernel
+    #bpf-filter: port 80 or udp
+    #copy-mode: ips
+    #copy-iface: eth1
+
+
+Verify everything is properly set
 
