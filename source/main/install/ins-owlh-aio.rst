@@ -200,10 +200,10 @@ should provide an output like this:
 
 .. code-block:: console
 
-  # netstat -nputa 
     [root@ip-172-31-41-217 ec2-user]# netstat -nputa
     Active Internet connections (servers and established)
     Proto Recv-Q Send-Q Local Address           Foreign Address         State       PID/Program name
+    ...
     tcp6       0      0 :::443                  :::*                    LISTEN      2570/httpd
     ... 
     tcp6       0      0 :::50001                :::*                    LISTEN      2451/owlhmaster
