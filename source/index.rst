@@ -13,9 +13,7 @@ This picture will summarize the process we are working in.
 .. toctree::
     :maxdepth: 4
 
-    main/OwlHGS
     main/OwlHInstall
-    main/OwlHTroubleshooting
 
 
 
