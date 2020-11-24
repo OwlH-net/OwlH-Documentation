@@ -4,17 +4,18 @@ OwlH Documentation home
 About OwlH
 ==========
 
-    v0.17.x
-
-This picture will summarize the process we are working in.
-
-.. image:: /img/owlhprocess.png
+    Current - v0.17.x
 
 .. toctree::
     :maxdepth: 1
 
     main/OwlHInstall
     main/OwlHScenarios
+
+This picture will summarize the process we are working in.
+
+.. image:: /img/owlhprocess.png
+
 
 .. toctree::
     :maxdepth: 1

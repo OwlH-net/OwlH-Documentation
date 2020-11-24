@@ -17,6 +17,10 @@ Choose your platform:
 Download OwlHInstaller: 
 -----------------------
 
+.. note:: 
+
+   Please be sure you choose the right repo 
+
 .. code-block:: console
    
    # cd /tmp
@@ -24,15 +28,14 @@ Download OwlHInstaller:
    # mkdir owlhinstaller
    # tar -C /tmp/owlhinstaller/ -xf /tmp/owlhinstaller.tar.gz
 
-.. note:: 
-
-   Please be sure you choose the right repo 
 
 
 Verify OwlH Installer configuration: 
 ------------------------------------
 
 Verify your owlhinstaller configuration file for repository, action and targets.
+
+configuration file: ``/tmp/owlhinstaller/config.json``
 
 .. code-block:: console
    
