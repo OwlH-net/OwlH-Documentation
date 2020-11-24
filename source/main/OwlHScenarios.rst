@@ -32,15 +32,11 @@ prepare your instances
 What is OwlH Client?
 --------------------
 
-OwlH client is an small app that runs in end points platforms and it will be helpful to forward traffic in real-time or store it locally until it is collected or is time to forward.
+OwlH client is an small client that runs in end point platforms and it will forward traffic in real-time to a central Software TAP server.
 
-This OwlH client is useful when you are running OwlH in any Software TAP configuration. Mostly, it is used in Cloud environments when you want to forward traffic from your instance to an OwlH Node for analysis.
-
-Install 
--------
+This OwlH client is useful when you are running OwlH in any Software TAP configuration. Mostly, it is used in Cloud environments when you want to forward traffic from your instance to an OwlH Node for analysis, but also can be run on deployments where an SPAN or Mirror port are not available.
 
 **OwlH Client is currently available for:**
-
 
 
 :CentOS: https://repo.owlh.net/current-centos/owlhclient.sh
@@ -62,6 +58,15 @@ Install
 
     * Windump and wimpcap
     * Socat (installed with Cygwin) 
+
+
+Download and Install 
+--------------------
+
+.. code-block:: console
+
+  # wget repo.owlh.net/current-centos/owlhclient.sh
+  # bash owlhclient.sh
 
 
 OwlH Client will be installed on 
@@ -104,48 +109,15 @@ Be sure to update the parameters properly.
 :Exclude IPs: Again, you can stop collecting from interfaces that will include the excluded ip. 
 :Wait Time: Time between checks in minutes. if you do a configuration change, Client will restart as needed with the new configuration. If client went down or connection is lost because OwlH STAP service is done for a while, Client will try to reconnect each 'wait time'
 
-* Download and install OwlH client
-
-remember to choose the right repository depending on your client distribution.
-
-+-------------------------------------------------+----------------------------------+
-| Linux Distribution                              | Repository                       | 
-+=================================================+==================================+
-| CentOS 7                                        | repo.owlh.net/current-centos     |
-+-------------------------------------------------+----------------------------------+
-| Debian/Ubuntu                                   | repo.owlh.net/current-debian     |
-+-------------------------------------------------+----------------------------------+
-| Raspbidian                                      | repo.owlh.net/current-arm        |
-+-------------------------------------------------+----------------------------------+
-
-
-.. code-block:: console
-
-  # wget repo.owlh.net/current-centos/owlhclient.sh
-  # bash owlhclient.sh
-
-* Check client configuration 
-
-a client configuration will include interface to listen to, exclusions, remote Software TAP Server or collector, bpf filter, ... be sure to configure the right options. 
-
-.. code-block:: console
-
-  {
-      "collectorIP":"10.13.1.13",
-      "collectorPort":"50010",
-      "cert":"/usr/local/owlh/src/owlhnode/conf/certs/ca.pem",
-      "bpf":"not port 50010 and not port 22",
-      "includeInt":["en","eth"],
-      "excludeInt":["lo"],
-      "includeNet":["0.0.0.0/0"],
-      "excludeIP":["192.168.0.1"],
-      "waitTime":10
-  }
-
-
-
 
 * start it
+
+.. code-block:: console
+
+    # systemctl daemon-reload 
+    # systemctl enable owlhstap
+    # systemctl start owlhstatp
+
 
 Verify your client is connected. 
 --------------------------------
