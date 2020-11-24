@@ -1,8 +1,7 @@
 User Manual
 ===========
 
+Open Rules 
+----------
 
-.. toctree::
-   :maxdepth: 1
-
-   OwlHFC
+      * :doc:`Suricata - Use 3rd party and custom rulesets</main/OwlHOpenRules>`
