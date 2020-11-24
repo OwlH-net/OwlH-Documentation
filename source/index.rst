@@ -11,23 +11,12 @@ This picture will summarize the process we are working in.
 .. image:: /img/owlhprocess.png
 
 .. toctree::
-    :maxdepth: 4
+    :maxdepth: 1
 
     main/OwlHInstall
     main/OwlHScenarios
 
 
-
-
-
-CHANGELOG
----------
-
-As per our latest version, in OwlH solution you may find: 
-
-.. _OwlH Changelog: https://github.com/OwlH-net/roadmap/blob/master/README.md
-
-**OwlH - current v0.17.x** - `OwlH Changelog`_
 
 .. toctree::
     :maxdepth: 1
