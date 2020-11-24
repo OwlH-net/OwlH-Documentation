@@ -21,11 +21,11 @@ Install Wazuh Agent
 
 .. tabs::
 
-  .. group-tab:: Yum
+  .. tab:: Yum
 
     .. include:: /main/OwlHWazuhAgentCentos.rst
 
-  .. group-tab:: APT
+  .. tab:: APT
 
     .. include:: /main/OwlHWazuhAgentDebian.rst
 
