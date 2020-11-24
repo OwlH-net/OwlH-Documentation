@@ -23,8 +23,8 @@ Ruleset Management
 
  #. configure ruleset sources.
  #. configure local ruleset using sources.
- #. assign ruleset to Suricata services
- #. sync.
+ #. assign ruleset to Suricata services.
+ #. synchronize ruleset with OwlH Node Suricata services.
 
 **Ruleset Maintenance process**
 
