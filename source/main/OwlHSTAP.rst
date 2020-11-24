@@ -7,9 +7,9 @@ This scenario is valid on Cloud environments as well as any site without SPAN or
 
 components:
 
-  * :owlh node: - should be installed and ready 
+  :owlh node: should be installed and ready 
     * check :doc:`install OwlH Node </main/install/ins-owlh-aio>`
-  * :owlh client: - will be installed on any server you want to collect traffic from.
+  :owlh client: will be installed on any server you want to collect traffic from.
 
 configure owlh node
 -------------------
