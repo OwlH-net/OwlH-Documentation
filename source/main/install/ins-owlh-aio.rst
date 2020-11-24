@@ -45,8 +45,9 @@ Verify your owlhinstaller configuration file for repository, action and targets.
     ],
 
 
-After executed you should and output like this
-.. code-block:: none
+After executed you should and output like this:
+
+  .. code-block:: none
    :class: output
 
         2020/11/24 08:21:31.095 [I]  OwlH Installer - v0.17.2.20201031
@@ -94,7 +95,7 @@ After executed you should and output like this
         2020/11/24 08:21:36.614 [I]  POSTSCRIPTS - UI -> owlhuipostscripts/
         2020/11/24 08:21:36.630 [I]  Files removed for owlhui successfully!
 
-
+Output may vary 
 
 
 Run OwlH Installer:
