@@ -9,9 +9,7 @@ If you need help
 * join OwlH slack - `OwlH Slack workspace`_
 * ask for professional support and services - prohelp@owlh.net
 
-.. _OwlH Changelog: https://github.com/OwlH-net/roadmap/blob/master/README.md
-
-**OwlH - current v0.17.x** - `OwlH Changelog`_
+**OwlH - current v0.17.x** 
 
 documentation last updated - |today|
 

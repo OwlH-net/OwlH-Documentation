@@ -97,7 +97,7 @@ Modify Filebeat configuration
     # vi /etc/filebeat/filebeat.yml 
 
 .. attention:: 
-    be sure your file looks like this, but please do not overwrite current filebeat.yml and respect the ouput section.
+    be sure your file looks like this, but please do not overwrite current filebeat.yml and respect the ``output`` section.
 
 .. code-block:: console
 
