@@ -45,6 +45,17 @@ Verify your owlhinstaller configuration file for repository, action and targets.
     ],
 
 
+Run OwlH Installer:
+-------------------
+
+run owlh installer 
+
+.. code-block:: console
+   
+   # cd /tmp/owlhinstaller
+   # ./owlhinstaller
+
+
 After executed you should and output like this:
 
   .. code-block:: none
@@ -98,27 +109,33 @@ After executed you should and output like this:
 Output may vary 
 
 
-Run OwlH Installer:
--------------------
-
-run owlh installer 
-
-.. code-block:: console
-   
-   # cd /tmp/owlhinstaller
-   # ./owlhinstaller
-
-
-
-
 Install and configure httpd/apache server side
 ----------------------------------------------
 
+you must install httpd/apache and the owlh site configuration file. 
+
+.. code-block:: console
+   
+   # cd /tmp/
+   # wget repo.owlh.net/current-centos/services/owlhui-httpd.sh
+   # bash owlhui-httpd.sh
+
+
 Install suricata
 ----------------
+.. code-block:: console
+   
+   # cd /tmp/
+   # wget repo.owlh.net/current-centos/services/owlhsuricata.sh
+   # bash owlhsuricata.sh
 
 Install Zeek
 ------------
+.. code-block:: console
+   
+   # cd /tmp/
+   # wget repo.owlh.net/current-centos/services/owlhzeek.sh
+   # bash owlhzeek.sh
 
 
 Install OwlH Interface
