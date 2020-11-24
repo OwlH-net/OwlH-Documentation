@@ -7,12 +7,11 @@ This scenario is valid on Cloud environments as well as any site without SPAN or
 
 components:
 
-  :owlh node: should be installed and ready 
-    * check :doc:`install OwlH Node </main/install/ins-owlh-aio>`
+  :owlh node: should be installed and ready - check :doc:`install OwlH Node </main/install/ins-owlh-aio>`
   :owlh client: will be installed on any server you want to collect traffic from.
 
-configure owlh node
--------------------
+configure owlh node for STAP
+----------------------------
 
 * Verify owlh interface is set 
 
@@ -41,9 +40,8 @@ Check from your UI, your node configuration for Suricata and Zeek, both must be 
     - Select the interface owlh from interface list 
     - let default Cert file
     - let default port (50010)
-    - let default bpf filter 
 
-save
+Add service.
 
 * Start software TAP server from UI 
 
