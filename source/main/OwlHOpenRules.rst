@@ -1,6 +1,5 @@
-OpenRules
-=========
-
+Suricata Ruleset management
+===========================
 
 Use OpenRules to:
 

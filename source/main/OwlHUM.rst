@@ -6,5 +6,3 @@ User Manual
    :maxdepth: 1
 
    OwlHFC
-   OwlHCF
-   OwlHAPI
