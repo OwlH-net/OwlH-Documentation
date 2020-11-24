@@ -15,11 +15,7 @@ This picture will summarize the process we are working in.
 
     main/OwlHGS
     main/OwlHInstall
-    main/OwlHUpdate
-    main/OwlHUM
     main/OwlHTroubleshooting
-    main/lookingfor
-    main/scenarios
 
 
 
