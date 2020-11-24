@@ -6,13 +6,13 @@ Software TAP Scenario
 
 components:
 
-  * owlh node 
-  * owlh client
+  * owlh node - should be installed and ready
+  * owlh client - will be installed on any server you want to collect traffic from.
 
-prepare owlh node
-------------------
+configure owlh node
+-------------------
 
-* owlh interface is set 
+* verify owlh interface is set 
 
 .. code-block:: console
 
@@ -23,14 +23,53 @@ prepare owlh node
 
 
 * Suricata and Zeek must be configured to listen to owlh interface
-* configure software TAP server from UI 
-* start software TAP server from UI 
+* Configure software TAP server from UI 
+* Start software TAP server from UI 
 
 prepare your instances 
 ----------------------
 
 * download and install owlh client
+
+remember to choose the right repository depending on your client distribution.
+
++-------------------------------------------------+----------------------------------+
+| Linux Distribution                              | Repository                       | 
++=================================================+==================================+
+| CentOS 7                                        | repo.owlh.net/current-centos     |
++-------------------------------------------------+----------------------------------+
+| Debian/Ubuntu                                   | repo.owlh.net/current-debian     |
++-------------------------------------------------+----------------------------------+
+| Raspbidian                                      | repo.owlh.net/current-arm        |
++-------------------------------------------------+----------------------------------+
+
+
+.. code-block:: console
+
+  # wget repo.owlh.net/current-centos/owlhclient.sh
+  # bash owlhclient.sh
+
 * check client configuration 
+
+a client configuration will include interface to listen to, exclusions, remote Software TAP Server or collector, bpf filter, ... be sure to configure the right options. 
+
+.. code-block:: console
+
+  {
+      "collectorIP":"10.13.1.13",
+      "collectorPort":"50010",
+      "cert":"/usr/local/owlh/src/owlhnode/conf/certs/ca.pem",
+      "bpf":"not port 50010 and not port 22",
+      "includeInt":["en","eth"],
+      "excludeInt":["lo"],
+      "includeNet":["0.0.0.0/0"],
+      "excludeIP":["192.168.0.1"],
+      "waitTime":10
+  }
+
+
+
+
 * start it
 
 Verify your client is connected. 
