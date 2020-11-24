@@ -1,16 +1,17 @@
 OwlH Documentation home
 =======================
 
-About OwlH
-==========
-
-    Current - v0.17.x
-
 .. toctree::
     :maxdepth: 1
 
     main/OwlHInstall
     main/OwlHScenarios
+
+About OwlH
+----------
+
+    Current - v0.17.x
+
 
 This picture will summarize the process we are working in.
 
