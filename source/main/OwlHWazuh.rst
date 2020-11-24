@@ -29,7 +29,7 @@ Install Wazuh Agent
 
     .. include:: /main/OwlHWazuhAgentDebian.rst
 
-
+Be sure your agent is correctly register and looks like ``active`` on Wazuh Manager
 
 Configure Wazuh Agent to read OwlH output
 -----------------------------------------
@@ -40,19 +40,12 @@ You can configure this from User Interface:
 
 :: 
 
-  UI -> nodes -> search your node -> node services configuration -> Wazuh -> add file
-  include the alerts.json path where Analyzer is storing events 
-  save and reload Wazuh 
+  * UI -> nodes -> search your node -> node services configuration -> Wazuh -> add file
+  * include the /var/log/owlh/alerts.json path where Analyzer is storing events 
+  * save and reload Wazuh 
 
 You can verify if there are new lines in the alerts.json file, UI will show current size and you can refresh it. also, you can verify ossec.log file to check if there are any errors. 
 
-To monitor ossec.log file: 
-
-:: 
-
-  UI -> nodes -> search your node -> monitor node -> add file
-  include your ossec.log file -> /var/ossec/logs/ossec.log
-  review the latest 10, 50 or 100 lines.
 
 Wazuh manager and ELK configuration
 -----------------------------------
