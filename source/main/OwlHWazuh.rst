@@ -25,7 +25,7 @@ Install Wazuh Agent
   .. group-tab:: Yum
 
 
-    .. include:: /main/OwlHWazuhAgentCentos
+    .. include:: /main/OwlHWazuhAgentCentos.rst
 
 
   .. group-tab:: APT
