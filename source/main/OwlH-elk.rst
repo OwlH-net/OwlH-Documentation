@@ -6,8 +6,6 @@ Sync with ELK 7.x using Wazuh
 
     Be sure you are running ELK (elasticsearch, filebeat and kibana) with version >7.3.2
 
-.. include:: keepincontact.rst
-
 
 We will need to modify a bit the Wazuh's default filebeat configuration, we will do:
 
@@ -25,11 +23,12 @@ We will need to modify a bit the Wazuh's default filebeat configuration, we will
   Please, check URLs and paths to ensure you use the right commands and that you adapt command lines as needed. 
 
 
+From your wazuh-manager run this. If you are running a wazuh-cluster you may need to run same procedure on each manager running filebeat
 
 Download files and prepare
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-::
+.. code-block:: console
     
     # cd /tmp
     # mkdir /tmp/owlhfilebeat
@@ -40,28 +39,35 @@ Download files and prepare
 Import OwlH kibana dashboards and objects in Kibana
 ---------------------------------------------------
 
-::
+change localhost as needed, replace it with the elasticsearch node running kibana.
+If you are using opendistro consider importing objects from ``kibana web ui -> management -> saved objects -> import``
+
+.. code-block:: console
 
     # curl -X POST "localhost:5601/api/saved_objects/_import" -H "kbn-xsrf: true" --form file=@/tmp/owlhfilebeat/owlh-kibana-objects-20191030.ndjson 
 
 Install OwlH template
 ---------------------
 
-::
+Replace localhost with your elasticsearch host ip. If you are running a elasticsearch cluster, just select one of the nodes. 
+
+.. code-block:: console
 
     # curl -XPUT -H 'Content-Type: application/json' 'http://localhost:9200/_template/owlh' -d@/tmp/owlhfilebeat/owlh-template.json
 
 Install OwlH module
 -------------------
 
-::
+Remember we are on Wazuh-manager shell
+
+.. code-block:: console
 
     # tar -C /usr/share/filebeat/module/ -xf /tmp/owlhfilebeat/owlh-filebeat-7.4-module.tar.gz
 
 Modify Wazuh Module
 -------------------
 
-::
+.. code-block:: console
 
     # vi /usr/share/filebeat/module/wazuh/alerts/config/alerts.yml 
 
@@ -69,7 +75,7 @@ Modify Wazuh Module
 .. attention:: 
     be sure your file looks like this
 
-::
+.. code-block:: console
 
     fields:
       index_prefix: {{ .index_prefix }}
@@ -86,14 +92,14 @@ Modify filebeat
 Modify Filebeat configuration
 -----------------------------
 
-::
+.. code-block:: console
 
     # vi /etc/filebeat/filebeat.yml 
 
 .. attention:: 
-    be sure your file looks like this
+    be sure your file looks like this, but please do not overwrite current filebeat.yml and respect the ``output`` section.
 
-::
+.. code-block:: console
 
     # Wazuh - Filebeat configuration file
     filebeat.modules:
@@ -121,7 +127,7 @@ Restart Filebeat
 
 You should be done. check your kibana to see the OwlH dashboards in dashboards section, and indices in discovery section.
 
-::
+.. code-block:: console
 
     Restart Filebeat
 

@@ -11,3 +11,9 @@ Software TAP Scenario
 ---------------------
 
       * :doc:`How-to configure Software TAP Scenario</main/OwlHSTAP>`
+
+
+Wazuh Integration
+-----------------
+
+      * :doc:`Configure OwlH as NIDS for Wazuh</main/OwlHWazuh>`

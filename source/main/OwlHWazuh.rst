@@ -5,13 +5,10 @@ if you want to send OwlH output including Suricata and Zeek alerts and logs to W
 
 This will help to integrate your NIDS alerts and output into Wazuh world. this is a one-way integration process.
 
-.. include:: keepincontact.rst
-
 Main steps
 ^^^^^^^^^^
 
 * Install and register your Wazuh Agent in the OwlH Node
-* Configure Wazuh Agent to read the OwlH Node output
 * Enable OwlH Node Analyzer
 * Add OwlH filebeat Module in your OwlH Manager
 * Import OwlH dashboards in your ELK Kibana
@@ -22,15 +19,17 @@ Main steps
 Install Wazuh Agent
 -------------------
 
-Run OwlH wazuh agent script to install Wazuh-agent in your OwlH Node.
+.. tabs::
 
-::
+  .. tab:: YUM
 
-  # wget repo.owlh.net/current-centos/services/owlhwazuh.sh
-  # bash owlhwazuh.sh
+    .. include:: /main/OwlHWazuhAgentCentos.rst
 
-Register your Wazuh Agent with your Wazuh Manager, and modify the ossec.conf file to point to it as needed. Please follow your Wazuh deployment process to run this step or refer to Wazuh's documentation.
+  .. tab:: APT
 
+    .. include:: /main/OwlHWazuhAgentDebian.rst
+
+Be sure your agent is correctly register and looks like ``active`` on Wazuh Manager
 
 Configure Wazuh Agent to read OwlH output
 -----------------------------------------
@@ -41,19 +40,12 @@ You can configure this from User Interface:
 
 :: 
 
-  UI -> nodes -> search your node -> node services configuration -> Wazuh -> add file
-  include the alerts.json path where Analyzer is storing events 
-  save and reload Wazuh 
+  * UI -> nodes -> search your node -> node services configuration -> Wazuh -> add file
+  * include the /var/log/owlh/alerts.json path where Analyzer is storing events 
+  * save and reload Wazuh 
 
 You can verify if there are new lines in the alerts.json file, UI will show current size and you can refresh it. also, you can verify ossec.log file to check if there are any errors. 
 
-To monitor ossec.log file: 
-
-:: 
-
-  UI -> nodes -> search your node -> monitor node -> add file
-  include your ossec.log file -> /var/ossec/logs/ossec.log
-  review the latest 10, 50 or 100 lines.
 
 Wazuh manager and ELK configuration
 -----------------------------------
