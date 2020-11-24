@@ -1,12 +1,12 @@
 
-#. Import the GPG key:
+1. Import the GPG key:
 
 .. code-block:: console
 
   # rpm --import https://packages.wazuh.com/key/GPG-KEY-WAZUH
 
 
-#. Add Wazuh repository
+2. Add Wazuh repository
 
 .. code-block:: console
 
@@ -19,3 +19,21 @@
     baseurl=https://packages.wazuh.com/4.x/yum/
     protect=1
     EOF
+
+3. Install wazuh - agent 
+
+.. note:: 
+
+  You can use your own wazuh-agent installation and registration procedure. 
+
+.. code-bloc:: console
+
+  # yum -y install wazuh-agent
+
+4. Enable and start your Wazuh-agent 
+
+.. code-block:: console
+
+  # systemctl daemon-reload
+  # systemctl enable wazuh-agent
+  # systemctl start wazuh-agent
