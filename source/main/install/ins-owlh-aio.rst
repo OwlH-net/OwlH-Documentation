@@ -117,11 +117,24 @@ Install and configure httpd/apache server side
 
 you must install httpd/apache and the owlh site configuration file. 
 
+
+.. tabs::
+
+  .. tab:: CENTOS
+
+    .. code-block:: console
+       
+       # cd /tmp/
+       # wget repo.owlh.net/current-centos/services/owlhui-httpd.sh
+       # bash owlhui-httpd.sh 1.1.1.1
+
+  .. tab:: DEBIAN/UBUNTU
+
 .. code-block:: console
-   
-   # cd /tmp/
-   # wget repo.owlh.net/current-centos/services/owlhui-httpd.sh
-   # bash owlhui-httpd.sh 1.1.1.1
+       
+       # cd /tmp/
+       # wget repo.owlh.net/current-debian/services/owlhui-httpd.sh
+       # bash owlhui-httpd.sh 1.1.1.1
 
 where: 
 
