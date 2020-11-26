@@ -35,7 +35,7 @@ Verify OwlH Installer configuration:
 
 Verify your owlhinstaller configuration file for repository, action and targets.
 
-configuration file: ``/tmp/owlhinstaller/config.json`
+configuration file: ``/tmp/owlhinstaller/config.json``
 
 .. code-block:: console
    
@@ -120,7 +120,7 @@ you must install httpd/apache and the owlh site configuration file.
 
 .. tabs::
 
-  .. tab:: CENTOS
+  .. group-tab:: CENTOS
 
     .. code-block:: console
        
@@ -128,7 +128,7 @@ you must install httpd/apache and the owlh site configuration file.
        # wget repo.owlh.net/current-centos/services/owlhui-httpd.sh
        # bash owlhui-httpd.sh 1.1.1.1
 
-  .. tab:: DEBIAN/UBUNTU
+  .. group-tab:: DEBIAN/UBUNTU
 
     .. code-block:: console
            
@@ -147,11 +147,26 @@ Install suricata
 
 If you want to use Suricata. You will configure Suricata from UI mostly
 
-.. code-block:: console
-   
-   # cd /tmp/
-   # wget repo.owlh.net/current-centos/services/owlhsuricata.sh
-   # bash owlhsuricata.sh
+
+.. tabs:: 
+
+  .. group-tab:: CENTOS
+
+    .. code-block:: console
+       
+       # cd /tmp/
+       # wget repo.owlh.net/current-centos/services/owlhsuricata.sh
+       # bash owlhsuricata.sh
+
+  .. group-tab:: DEBIAN/UBUNTU
+
+    .. code-block:: console
+       
+       # cd /tmp/
+       # wget repo.owlh.net/current-debian/services/owlhsuricata.sh
+       # bash owlhsuricata.sh
+
+
 
 
 Install Zeek
