@@ -197,6 +197,11 @@ If you want to use Suricata. You will configure Suricata from UI mostly
        # wget repo.owlh.net/current-debian/services/owlhsuricata.sh
        # bash owlhsuricata.sh
 
+Is SURICATA ready to work? If you want to be sure Suricata is correctly installed try this.
+
+.. code-block:: console
+
+  # Suricata -V
 
 
 
@@ -223,6 +228,11 @@ This step can take a long while, consider running it under a screen session.
        # wget repo.owlh.net/current-debian/services/owlhzeek.sh
        # bash owlhzeek.sh
 
+Is ZEEK ready to work? If you want to be sure Zeek is correctly installed try this.
+
+.. code-block:: console
+
+  # /usr/local/zeek/bin/zeek -v
 
 
 Install OwlH Interface
@@ -241,7 +251,7 @@ If you plan to use Software TAP configuration, you should prepare your owlh loca
        # bash owlhinterface.sh
 
   .. group-tab:: DEBIAN/UBUNTU
-  
+
     .. code-block:: console 
       
       # modprobe -v dummy numdummies=2
