@@ -21,12 +21,26 @@ Download OwlHInstaller:
 
    Please be sure you choose the right repo 
 
-.. code-block:: console
-   
-   # cd /tmp
-   # wget repo.owlh.net/current-centos/owlhinstaller.tar.gz
-   # mkdir owlhinstaller
-   # tar -C /tmp/owlhinstaller/ -xf /tmp/owlhinstaller.tar.gz
+.. tabs::
+
+  .. group-tab:: CENTOS
+
+    .. code-block:: console
+       
+       # cd /tmp
+       # wget repo.owlh.net/current-centos/owlhinstaller.tar.gz
+       # mkdir owlhinstaller
+       # tar -C /tmp/owlhinstaller/ -xf /tmp/owlhinstaller.tar.gz
+
+  .. group-tab:: DEBIAN/UBUNTU
+
+    .. code-block:: console
+       
+       # cd /tmp
+       # wget repo.owlh.net/current-debian/owlhinstaller.tar.gz
+       # mkdir owlhinstaller
+       # tar -C /tmp/owlhinstaller/ -xf /tmp/owlhinstaller.tar.gz
+
 
 
 
@@ -35,17 +49,34 @@ Verify OwlH Installer configuration:
 
 Verify your owlhinstaller configuration file for repository, action and targets.
 
-configuration file: ``/tmp/owlhinstaller/config.json`
+configuration file: ``/tmp/owlhinstaller/config.json``
 
-.. code-block:: console
-   
-    "action": "install",                                 <<< this should be install 
-    "repourl":"http://repo.owlh.net/current-centos/",    <<< be sure to us the right repository
-    "target": [
-        "owlhmaster",                                     /
-        "owlhnode",                                      <   As we want to install an AIO
-        "owlhui"                                          \
-    ],
+.. tabs::
+
+  .. group-tab:: CENTOS
+
+    .. code-block:: console
+       
+        "action": "install",                                 <<< this should be install 
+        "repourl":"http://repo.owlh.net/current-centos/",    <<< be sure to us the right repository
+        "target": [
+            "owlhmaster",                                     /
+            "owlhnode",                                      <   As we want to install an AIO
+            "owlhui"                                          \
+        ],
+
+  .. group-tab:: DEBIAN/UBUNTU
+
+    .. code-block:: console
+       
+        "action": "install",                                 <<< this should be install 
+        "repourl":"http://repo.owlh.net/current-debian/",    <<< be sure to us the right repository
+        "target": [
+            "owlhmaster",                                     /
+            "owlhnode",                                      <   As we want to install an AIO
+            "owlhui"                                          \
+        ],
+
 
 
 Run OwlH Installer:
@@ -117,11 +148,24 @@ Install and configure httpd/apache server side
 
 you must install httpd/apache and the owlh site configuration file. 
 
-.. code-block:: console
-   
-   # cd /tmp/
-   # wget repo.owlh.net/current-centos/services/owlhui-httpd.sh
-   # bash owlhui-httpd.sh 1.1.1.1
+
+.. tabs::
+
+  .. group-tab:: CENTOS
+
+    .. code-block:: console
+       
+       # cd /tmp/
+       # wget repo.owlh.net/current-centos/services/owlhui-httpd.sh
+       # bash owlhui-httpd.sh 1.1.1.1
+
+  .. group-tab:: DEBIAN/UBUNTU
+
+    .. code-block:: console
+           
+           # cd /tmp/
+           # wget repo.owlh.net/current-debian/services/owlhui-httpd.sh
+           # bash owlhui-httpd.sh 1.1.1.1
 
 where: 
 
@@ -134,11 +178,31 @@ Install suricata
 
 If you want to use Suricata. You will configure Suricata from UI mostly
 
+
+.. tabs:: 
+
+  .. group-tab:: CENTOS
+
+    .. code-block:: console
+       
+       # cd /tmp/
+       # wget repo.owlh.net/current-centos/services/owlhsuricata.sh
+       # bash owlhsuricata.sh
+
+  .. group-tab:: DEBIAN/UBUNTU
+
+    .. code-block:: console
+       
+       # cd /tmp/
+       # wget repo.owlh.net/current-debian/services/owlhsuricata.sh
+       # bash owlhsuricata.sh
+
+Is SURICATA ready to work? If you want to be sure Suricata is correctly installed try this.
+
 .. code-block:: console
-   
-   # cd /tmp/
-   # wget repo.owlh.net/current-centos/services/owlhsuricata.sh
-   # bash owlhsuricata.sh
+
+  # Suricata -V
+
 
 
 Install Zeek
@@ -146,11 +210,29 @@ Install Zeek
 
 This step can take a long while, consider running it under a screen session.
 
+.. tabs::
+
+  .. group-tab:: CENTOS
+
+    .. code-block:: console
+       
+       # cd /tmp/
+       # wget repo.owlh.net/current-centos/services/owlhzeek.sh
+       # bash owlhzeek.sh
+
+  .. group-tab:: DEBIAN/UBUNTU
+
+    .. code-block:: console
+       
+       # cd /tmp/
+       # wget repo.owlh.net/current-debian/services/owlhzeek.sh
+       # bash owlhzeek.sh
+
+Is ZEEK ready to work? If you want to be sure Zeek is correctly installed try this.
+
 .. code-block:: console
-   
-   # cd /tmp/
-   # wget repo.owlh.net/current-centos/services/owlhzeek.sh
-   # bash owlhzeek.sh
+
+  # /usr/local/zeek/bin/zeek -v
 
 
 Install OwlH Interface
@@ -158,11 +240,27 @@ Install OwlH Interface
 
 If you plan to use Software TAP configuration, you should prepare your owlh local interface
 
-.. code-block:: console
-   
-   # cd /tmp/
-   # wget repo.owlh.net/current-centos/services/owlhinterface.sh
-   # bash owlhinterface.sh
+.. tabs::
+
+  .. group-tab:: CENTOS
+
+    .. code-block:: console
+       
+       # cd /tmp/
+       # wget repo.owlh.net/current-centos/services/owlhinterface.sh
+       # bash owlhinterface.sh
+
+  .. group-tab:: DEBIAN/UBUNTU
+
+    .. code-block:: console 
+      
+      # modprobe -v dummy numdummies=2
+      # ip link add owlh type dummy
+      # ip link set owlh mtu 65535
+      # ip link set owlh up
+
+    Save this commands to an /rc.local script
+
 
 Also, if using suricata and Software TAP you will need to add this interface details to af-packet: key
 
