@@ -242,10 +242,11 @@ If you plan to use Software TAP configuration, you should prepare your owlh loca
 
   .. group-tab:: DEBIAN/UBUNTU
     .. code-block:: console 
-      modprobe -v dummy numdummies=2
-      ip link add owlh type dummy
-      ip link set owlh mtu 65535
-      ip link set owlh up
+      
+      # modprobe -v dummy numdummies=2
+      # ip link add owlh type dummy
+      # ip link set owlh mtu 65535
+      # ip link set owlh up
 
     Save this commands to an /rc.local script
 
