@@ -241,6 +241,7 @@ If you plan to use Software TAP configuration, you should prepare your owlh loca
        # bash owlhinterface.sh
 
   .. group-tab:: DEBIAN/UBUNTU
+  
     .. code-block:: console 
       
       # modprobe -v dummy numdummies=2
