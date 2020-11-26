@@ -163,9 +163,9 @@ you must install httpd/apache and the owlh site configuration file.
 
     .. code-block:: console
            
-           # cd /tmp/
-           # wget repo.owlh.net/current-debian/services/owlhui-httpd.sh
-           # bash owlhui-httpd.sh 1.1.1.1
+       # cd /tmp/
+       # wget repo.owlh.net/current-debian/services/owlhui-httpd.sh
+       # bash owlhui-httpd.sh 1.1.1.1
 
 where: 
 
@@ -253,13 +253,10 @@ If you plan to use Software TAP configuration, you should prepare your owlh loca
   .. group-tab:: DEBIAN/UBUNTU
 
     .. code-block:: console 
-      
-      # modprobe -v dummy numdummies=2
-      # ip link add owlh type dummy
-      # ip link set owlh mtu 65535
-      # ip link set owlh up
 
-    Save this commands to an /rc.local script
+      # cd /tmp/
+      # wget repo.owlh.net/current-debian/services/owlhinterface.sh
+      # bash owlhinterface.sh
 
 
 Also, if using suricata and Software TAP you will need to add this interface details to af-packet: key
