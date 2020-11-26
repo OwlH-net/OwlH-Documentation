@@ -130,11 +130,11 @@ you must install httpd/apache and the owlh site configuration file.
 
   .. tab:: DEBIAN/UBUNTU
 
-.. code-block:: console
-       
-       # cd /tmp/
-       # wget repo.owlh.net/current-debian/services/owlhui-httpd.sh
-       # bash owlhui-httpd.sh 1.1.1.1
+    .. code-block:: console
+           
+           # cd /tmp/
+           # wget repo.owlh.net/current-debian/services/owlhui-httpd.sh
+           # bash owlhui-httpd.sh 1.1.1.1
 
 where: 
 
