@@ -7,6 +7,9 @@ Troubleshooting
 
 .. include:: /main/missing.rst
 
+
+.. image:: /img/trb01.png
+
 OwlH Node 
 ---------
 
@@ -19,5 +22,3 @@ OwlH Master
 OwlH UI
 -------
 
-
-----
