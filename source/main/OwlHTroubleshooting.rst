@@ -7,6 +7,7 @@ Troubleshooting
 
 .. include:: /main/missing.rst
 
+**Check Flow Data diagram and checkpoints.**
 
 .. image:: /img/trb01.png
 
