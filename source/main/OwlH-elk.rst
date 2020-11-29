@@ -138,3 +138,26 @@ You should be done. check your kibana to see the OwlH dashboards in dashboards s
     # journalctl -f -u filebeat
 
     From your web browser, check kibana->dashboards
+
+Check your Full environment flow
+--------------------------------
+
+.. code-block:: console
+    **From OwlH Node**
+    1.- is traffic in place?
+    
+    # tcpdump -i owlh -nn
+    
+    2.- suricata is creating alerts?
+    
+    # tail -f /var/log/suricata/eve.json | grep 'event_type":"alert'
+    
+    3.- zeek creating events?
+    # tail -f /usr/local/zeek/logs/current/conn.log | grep bro_engine 
+    
+    **From Wazuh Manager**
+
+    4.- Wazuh creating output from Owlh?
+    
+    # tail -f /var/ossec/logs/alerts/alerts.json | grep bro_engine
+    # tail -f /var/ossec/logs/alerts/alerts.json | grep 'event_type":"alert'

@@ -7,6 +7,7 @@ OwlH Documentation home
     main/OwlHInstall
     main/OwlHScenarios
     main/OwlHUM
+    main/OwlHTroubleshooting
 
 About OwlH
 ----------
