@@ -34,13 +34,13 @@ Be sure your agent is correctly register and looks like ``active`` on Wazuh Mana
 Configure Wazuh Agent to read OwlH output
 -----------------------------------------
 
-We need to tell our Wazuh Agent to read the OwlH Output where NIDS alerts and logs are stored. The file is created by the OwlH Analyzer and by default is /var/owlh/alerts.json. Be sure Analyzer is configured and working
+We need to tell our Wazuh Agent to read the OwlH Output where NIDS alerts and logs are stored. The file is created by the OwlH Analyzer and by default is /var/log/owlh/alerts.json. Be sure Analyzer is configured and working
 
-You can configure this from User Interface:
+You can configure this from OwlH User Interface:
 
 :: 
 
-  * UI -> nodes -> search your node -> node services configuration -> Wazuh -> add file
+  * OwlH UI -> nodes -> search your node -> node services configuration -> Wazuh -> add file
   * include the /var/log/owlh/alerts.json path where Analyzer is storing events 
   * save and reload Wazuh 
 
