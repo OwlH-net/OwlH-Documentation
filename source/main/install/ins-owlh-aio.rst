@@ -11,7 +11,7 @@ Choose your platform:
 +-------------------------------------------------+----------------------------------+
 | Debian/Ubuntu                                   | repo.owlh.net/current-debian     |
 +-------------------------------------------------+----------------------------------+
-| Raspbidian                                      | repo.owlh.net/current-arm        |
+| Raspdian                                        | repo.owlh.net/current-arm        |
 +-------------------------------------------------+----------------------------------+
 
 Download OwlHInstaller: 
@@ -140,7 +140,7 @@ After executed you should and output like this:
         2020/11/24 08:21:36.614 [I]  POSTSCRIPTS - UI -> owlhuipostscripts/
         2020/11/24 08:21:36.630 [I]  Files removed for owlhui successfully!
 
-Output may vary 
+Output may vary. 
 
 
 Install and configure httpd/apache server side
@@ -197,11 +197,11 @@ If you want to use Suricata. You will configure Suricata from UI mostly
        # wget repo.owlh.net/current-debian/services/owlhsuricata.sh
        # bash owlhsuricata.sh
 
-Is SURICATA ready to work? If you want to be sure Suricata is correctly installed try this.
+Is Suricata ready to work? If you want to be sure Suricata is correctly installed try this.
 
 .. code-block:: console
 
-  # Suricata -V
+  # suricata -V
 
 
 
