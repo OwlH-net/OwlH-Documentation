@@ -24,7 +24,7 @@ This picture will summarize the process we are working in.
     :maxdepth: 1
 
     main/contact
-.. _OwlH Slack workspace: https://join.slack.com/t/owlh/shared_invite/enQtNjE2NTEwODUzNTExLTJlNTdlMDRiMzM0ZTVhNWQ0YWE4YzgyYWQ4ZGYyMDQzMzM5NDA1M2I3NDlhYTFkNjdhZTk0MzFjMGU3ZWI3ZDM
+.. _OwlH Slack workspace: http://bit.ly/owlhslack
 
 * email our support team - support@owlh.net
 * join OwlH slack - `OwlH Slack workspace`_
