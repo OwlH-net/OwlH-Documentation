@@ -23,7 +23,7 @@ Check if suricata load rules when it start
 
 ::
 
-  # /usr/bin/suricata -i eth0 -c /etc/suricata/suricata.yaml -vvv | grep "signatured processed"
+  # /usr/bin/suricata -i eth0 -c /etc/suricata/suricata.yaml -vvv | grep "signatures processed"
     1/4/2020 -- 07:24:23 - <Info> - 18973 signatures processed. 1176 are IP-only rules, 6207 are inspecting packet payload, 13790 inspect application layer, 0 are decoder event only
 
 You can run the command without grep for verbose output.
